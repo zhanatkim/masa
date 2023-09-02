@@ -242,6 +242,7 @@
   @include vp-1199 {
     font-size: 16px;
     line-height: 20px;
+    justify-self: left;
   }
 
   @include vp-767 {

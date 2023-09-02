@@ -32,6 +32,20 @@
     }
   }
 
+  &--no-text {
+    padding: 0;
+    border-radius: 50%;
+    border: none;
+    width: 30px;
+    height: 30px;
+    align-self: center;
+
+    .button__mark {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
   &--form {
     color: $color-default-white;
     border: 1px solid $color-default-white;

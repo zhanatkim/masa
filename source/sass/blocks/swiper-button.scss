@@ -1,0 +1,14 @@
+.swiper-button {
+
+  &::after {
+    display: none;
+  }
+  
+  &--prev {
+    svg {
+      rotate: -180deg;
+    }
+  }
+
+  &--next {}
+}

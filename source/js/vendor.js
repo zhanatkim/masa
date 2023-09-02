@@ -2,3 +2,4 @@
 // import './vendor/swiper';
 import './vendor/focus-visible-polyfill';
 import './modules/hero-swiper';
+import './modules/programs-swiper';

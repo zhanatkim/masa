@@ -116,14 +116,13 @@
       }
     }
 
-    @media (hover: hover) {
-      &:hover:not(.focus-visible) {
-        background-color: rgba(0, 0, 0, 0.4);
-      }
-    }
+    @include hover {
+      color: $color-default-blue;
 
-    &.focus-visible:focus {
-      background-color: rgba(0, 0, 0, 0.4);
+      @include active {
+        background-color: $color-default-blue;
+        color: $color-default-white;
+      }
     }
   }
 
@@ -223,11 +222,12 @@
     }
 
     .custom-select__button {
-      border: 2px solid #ff1553;
+      border: 1px solid $color-error-red;
+      background: rgba($color-error-red, 0.2);
 
       &:focus,
       &:hover {
-        border: 2px solid rgba(#ff1553, 0.5);
+        border: 1px solid rgba($color-error-red, 0.5);
       }
     }
   }
