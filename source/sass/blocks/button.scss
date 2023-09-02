@@ -1,0 +1,64 @@
+.button {
+  position: relative;
+  font-size: 14px;
+  font-weight: 500;
+  color: $color-default-blue;
+  background-color: transparent;
+  text-align: center;
+  border: 1px solid $color-default-blue;
+  border-radius: 30px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 3px 3px 30px;
+  width: fit-content;
+  gap: 30px;
+  transition: background-color $trans-default;
+
+  & .button__mark {
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-default-blue;
+    color: $color-default-white;
+
+    @include vp-767 {
+      width: 34px;
+      height: 34px;
+    }
+  }
+
+  &--form {
+    color: $color-default-white;
+    border: 1px solid $color-default-white;
+
+    & .button__mark {
+      background-color: $color-default-white;
+      color: $color-default-blue;
+    }
+  }
+
+  @include hover-focus {
+    background-color: $color-default-blue;
+    color: $color-default-white;
+
+    & .button__mark {
+      background-color: $color-default-white;
+      color: $color-default-blue;
+
+      & svg {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  @include vp-767 {
+    font-size: 12px;
+    padding: 3px 3px 3px 20px;
+    gap: 20px;
+  }
+}

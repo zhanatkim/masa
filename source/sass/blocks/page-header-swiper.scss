@@ -1,0 +1,220 @@
+.page-header-swiper {
+  width: 100%;
+  margin-top: 27%;
+  margin-bottom: 22px;
+
+  & > .page-header-swiper__pagination {
+    top: 10px;
+    left: 15px;
+    width: fit-content;
+    height: fit-content;
+
+    & > .swiper-pagination-bullet {
+      margin: 0 6px;
+    }
+
+    @include vp-767 {
+      top: 4px;
+      left: 10px;
+    }
+  }
+
+  @include vp-1199 {
+    margin-top: 87.31%;
+    margin-bottom: 60px;
+  }
+
+  @include vp-767 {
+    margin-top: 54.83%;
+    margin-bottom: 20px;
+  }
+}
+
+.page-header-swiper__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 79%;
+  height: 100%;
+
+  @include vp-1199 {
+    width: 97.2%;
+  }
+
+  @include vp-767 {
+    width: 100%;
+  }
+}
+
+.page-header-swiper__text {
+  margin-top: -6px;
+  padding: 0 50px 30px;
+  background-color: $color-default-white;
+  border-radius: 0 0 30px 28px;
+  width: 79.75%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+
+  &::after {
+    content: "";
+    background-image: url("../img/svg/header-slide-angle.svg");
+    background-position: top;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    top: 6px;
+    right: -25px;
+
+    @include vp-1199 {
+      top: 2px;
+    }
+
+    @include vp-767 {
+      top: 0;
+      right: -9px;
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  & p {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    line-height: 26px;
+
+    @include vp-1199 {
+      line-height: 20px;
+    }
+
+    @include vp-767 {
+      font-size: 14px;
+      padding: 0 14px 10px;
+      background-color: $color-default-white;
+      border-radius: 0px 0px 14px 0px;
+    }
+  }
+
+  @include vp-1199 {
+    width: 89.68%;
+    padding: 0 40px 32px;
+    margin-top: -3px;
+    align-items: flex-start;
+  }
+
+  @include vp-767 {
+    padding: 0;
+    border-radius: 0;
+    display: block;
+    background-color: transparent;
+  }
+}
+
+.page-header-swiper__mark {
+  margin-bottom: -1px;
+  width: 94px;
+  height: 38px;
+  border-radius: 20px 20px 0 0;
+  background-color: $color-default-white;
+  position: relative;
+
+  &::after {
+    content: "";
+    background-image: url("../img/svg/header-slide-angle.svg");
+    background-position: top;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    bottom: 0;
+    right: -19px;
+    transform: rotate(-90deg);
+
+    @include vp-767 {
+      bottom: 0;
+      right: -9px;
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  @include vp-767 {
+    width: 80px;
+    height: 28px;
+    border-radius: 12px 12px 0px 0px;
+  }
+}
+
+.page-header-swiper__title {
+  margin: 0;
+  padding: 40px 50px 30px;
+  background-color: $color-default-white;
+  border-radius: 0 30px 30px 0;
+
+  @include vp-1199 {
+    padding: 30px 40px 24px;
+  }
+
+  @include vp-767 {
+    padding: 20px 14px 16px;
+    border-radius: 0px 16px 16px 0px;
+  }
+}
+
+.page-header-swiper__inner {
+  @include vp-767 {
+    position: relative;
+    padding: 10px 15px;
+    border-radius: 0px 0px 14px 14px;
+    background-color: $color-default-white;
+    width: min-content;
+
+    &::after {
+      content: "";
+      background-image: url("../img/svg/header-slide-angle.svg");
+      background-position: top;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: 0;
+      right: -9px;
+    }
+  }
+}
+
+.page-header-swiper__button {
+
+  @include vp-1199 {
+    margin-top: 4px;
+  }
+
+  @include vp-767 {
+    align-self: flex-start;
+    margin: 0;
+  }
+}
+
+.page-header-swiper__pagination span {
+  width: 10px;
+  height: 10px;
+  border: 1px solid $color-default-blue;
+  background-color: transparent;
+  opacity: 1;
+
+  &.swiper-pagination-bullet-active {
+    background-color: $color-default-blue;
+  }
+
+  @include vp-767 {
+    width: 8px;
+    height: 8px;
+  }
+}

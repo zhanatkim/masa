@@ -1,0 +1,180 @@
+.page-footer {
+  padding: 0 calc(50% - 620px);
+  padding-top: 60px;
+  padding-bottom: 50px;
+  background-color: $color-default-beige;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas:
+    "top socials"
+    "bottom bottom";
+  gap: 25px;
+
+  @include vp-1319 {
+    padding: 60px 40px 50px;
+  }
+
+  @include vp-1199 {
+    padding: 60px 45px 50px;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+    "top top"
+    "bottom socials";
+  }
+
+  @include vp-767 {
+    padding: 29px 15px 40px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "top"
+    "bottom"
+    "socials";
+    gap: 15px;
+  }
+
+  & p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.page-footer__top {
+  grid-area: top;
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 52px;
+
+  @include vp-1199 {
+    width: 100%;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-bottom: 5px;
+  }
+}
+
+.page-footer__socials {
+  grid-area: socials;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: fit-content;
+  justify-self: right;
+  align-self: center;
+
+  @include vp-1199 {
+    gap: 10px;
+  }
+
+  @include vp-767 {
+    justify-self: center;
+  }
+}
+
+.page-footer__bottom {
+  grid-area: bottom;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+
+  @include vp-1199 {
+    flex-direction: column-reverse;
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  @include vp-767 {
+    align-items: center;
+  }
+}
+
+.page-footer__list,
+.page-footer__socials {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.page-footer__logo {
+  @include vp-767 {
+    align-self: center;
+    justify-self: center;
+  }
+}
+
+.page-footer__list {
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+
+  @include vp-1199 {
+    justify-self: flex-end;
+    gap: 15px;
+  }
+
+  @include vp-767 {
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+    column-gap: 30px;
+    row-gap: 20px;
+    font-size: 14px;
+  }
+
+  & a {
+    @include hover-focus {
+      outline: none;
+      color: $color-default-blue;
+
+      @include active {
+        color: $color-active-navy;
+      }
+    }
+  }
+}
+
+.page-footer__copyright {
+  @include vp-1199 {
+    opacity: 0.6;
+  }
+}
+
+.page-footer__privacy {
+  position: relative;
+  width: fit-content;
+  text-decoration: none;
+  color: $color-default-black;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $color-default-black;
+  }
+
+  @include hover-focus {
+    outline: none;
+    color: $color-default-blue;
+
+    &::after {
+      background-color: $color-default-blue;
+    }
+
+    @include active {
+      color: $color-active-navy;
+
+      &::after {
+        background-color: $color-active-navy;
+      }
+    }
+  }
+}

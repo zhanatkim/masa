@@ -1,0 +1,120 @@
+.page-header {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 calc(50% - 620px);
+
+  @include vp-1319 {
+    padding: 0 40px;
+  }
+
+  @include vp-1199 {
+    padding: 0 45px;
+  }
+
+  @include vp-767 {
+    padding: 0 15px;
+
+    &--is-active .page-header__logo {
+      display: none;
+    }
+  }
+}
+
+.page-header__top {
+  width: 100%;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+
+  @include vp-1199 {
+  }
+
+  @include vp-767 {
+    padding-top: 20px;
+  }
+}
+
+.page-header__toggle {
+  position: relative;
+  cursor: pointer;
+  background-color: $color-default-white;
+  color: $color-default-blue;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 3px 3px 20px;
+  border-radius: 30px;
+  border: 1px solid $color-default-blue;
+  // width: 136px;
+  gap: 20px;
+  z-index: 3;
+
+  &::after {
+    content: "";
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: $color-default-blue;
+    background-image: url("../img/svg/header-toggle.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 18px 8px;
+    transition: background-image $trans-default;
+  }
+
+  &--is-active {
+    width: 286px;
+    background-color: $color-default-blue;
+    color: $color-default-white;
+
+    &::after {
+      background-color: $color-default-white;
+      background-image: url("../img/svg/header-toggle-close.svg");
+      background-size: 16px 16px;
+    }
+
+    @include vp-767 {
+      width: 100% ;
+    }
+  }
+}
+
+.page-header__photo {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(49, 109, 194, 0.2);
+  }
+
+  &--is-active {
+    display: block;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top left;
+    }
+  }
+}

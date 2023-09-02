@@ -10,8 +10,8 @@
   flex-direction: column;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-
-  background-color: rgba($color-default-black, 0.8);
+  // background-color: rgba(13, 29, 51, 0.4);
+  background-color: $color-overlay-dark;
   transform: scale(1.2);
   visibility: hidden;
   opacity: 0;
@@ -29,85 +29,30 @@
     display: none;
   }
 
-  &__wrapper {
-    position: relative;
 
-    display: flex;
-    flex-shrink: 0;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 100%;
-    padding: 60px 40px;
+  // &--responsive {
+  //   .modal__content {
+  //     width: 100%;
+  //   }
+  // }
 
-    @include vp-767 {
-      padding: 60px 16px;
-    }
-  }
+  // &--fit-content {
+  //   .modal__content {
+  //     width: auto;
 
-  &__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
+  //     @include vp-767 {
+  //       width: 100%;
+  //     }
+  //   }
+  // }
 
-    width: 100%;
-    height: 100%;
+  // &--no-scale {
+  //   transform: none;
+  // }
 
-    cursor: pointer;
-  }
-
-  &__content {
-    position: relative;
-
-    width: 600px;
-    padding: 40px;
-
-    background-color: $color-default-white;
-
-    @include vp-767 {
-      width: 100%;
-      padding: 20px;
-    }
-  }
-
-  &__close-btn {
-    position: absolute;
-    top: 22px;
-    right: 22px;
-    z-index: 1;
-
-    width: 40px;
-    height: 40px;
-    padding: 0;
-
-    background: $color-transparent;
-    border: none;
-    cursor: pointer;
-  }
-
-  &--responsive {
-    .modal__content {
-      width: 100%;
-    }
-  }
-
-  &--fit-content {
-    .modal__content {
-      width: auto;
-
-      @include vp-767 {
-        width: 100%;
-      }
-    }
-  }
-
-  &--no-scale {
-    transform: none;
-  }
-
-  &--preload {
-    transition: none;
-  }
+  // &--preload {
+  //   transition: none;
+  // }
 
   &.is-active {
     transform: scale(1);
@@ -116,4 +61,86 @@
 
     pointer-events: auto;
   }
+}
+
+.modal__wrapper {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+  // padding: 90px 40px;
+
+  @include vp-1199 {
+    padding-left: 17%;
+    padding-right: 17%;
+  }
+
+  @include vp-767 {
+    padding: 23px 15px;
+  }
+}
+
+.modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.modal__content {
+  position: relative;
+  width: 510px;
+  padding: 60px 80px;
+  border-radius: 16px;
+  background-color: $color-default-white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  @include vp-1199 {
+    width: 100%;
+  }
+
+  @include vp-767 {
+    // width: 100%;
+    padding: 40px 15px;
+    gap: 15px;
+  }
+}
+
+.modal__close-btn {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  z-index: 1;
+
+  width: 40px;
+  height: 40px;
+  padding: 0;
+
+  background: $color-transparent;
+  border: none;
+  cursor: pointer;
+}
+
+
+.modal__form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 10px;
+  gap: 20px;
+}
+
+.modal__description {
+  text-align: center;
+  line-height: 26px;
 }
