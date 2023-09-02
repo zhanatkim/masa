@@ -1,14 +1,46 @@
 .swiper-button {
+  color: $color-default-blue;
+  top: auto;
+  bottom: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+
+  @include hover-focus {
+    background-color: $color-default-white;
+
+    @include active {
+      color: rgba($color-default-blue, 0.7);
+    }
+  }
+
+  &:disabled {
+    color: $color-disable-gray;
+  }
 
   &::after {
     display: none;
   }
-  
+
   &--prev {
+    left: auto;
+    right: 32px;
+
     svg {
       rotate: -180deg;
     }
   }
 
-  &--next {}
+  &--next {
+    left: auto;
+    right: 0;
+  }
+
+  @include vp-1199 {
+  }
+
+  @include vp-767 {
+    top: 20px;
+    bottom: auto;
+  }
 }

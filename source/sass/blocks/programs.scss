@@ -1,5 +1,6 @@
 .programs {
   padding: 0 calc(50% - 620px);
+  padding-bottom: 120px;
   display: grid;
   background-color: $color-default-beige;
 
@@ -9,89 +10,66 @@
   }
 
   @include vp-1199 {
-    padding: 0 45px;
+    padding: 0 0 100px 45px;
   }
 
   @include vp-767 {
-    padding: 0 15px;
+    padding: 0 15px 67px;
+  }
+}
+
+.programs__button {
+  @include vp-1199 {
+    margin-right: 45px;
+  }
+
+  @include vp-767 {
+    margin-right: 0;
+    order: 1;
   }
 }
 
 .programs__swiper {
+  position: relative;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
 
-.programs__name {
-  position: relative;
-  margin: 0;
-  padding: 18px 18px 6px;
-  width: 49.5%;
-  border-radius: 12px 12px 0px 0px;
-  background-color: $color-default-white;
-  color: $color-default-blue;
-  font-size: 24px;
-  line-height: 26px;
-  font-weight: 400;
+  & .programs__pagination {
+    width: 91.45%;
+    height: 2px;
+    top: auto;
+    bottom: 12px;
+    background: rgba($color-default-blue, 0.2);
 
-  &::after {
-    content: "";
-    background-image: url("../img/svg/header-slide-angle.svg");
-    background-position: top;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    bottom: 0;
-    right: -17px;
-    transform: rotate(-90deg);
+    & span {
+      background: $color-default-blue;
+    }
+
+    @include vp-1199 {
+      width: 82.6%;
+    }
+
+    @include vp-767 {
+      display: none;
+    }
   }
 
-}
+  @include vp-1199 {
+  }
 
-.programs__slide {
-  position: relative;
-  width: 392px;
-}
-
-.programs__container {
-  padding: 20px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-}
-
-.programs__inner {
-  padding: 12px 18px 15px;
-  width: 82%;
-  display: flex;
-  border-radius: 0px 12px 12px 12px;
-  background-color: $color-default-white;
-  gap: 16px;
-
-  & p {
-    margin: 0;
-    padding: 0;
-    font-size: 14px;
-    line-height: 18px;
+  @include vp-767 {
+    flex-direction: column;
   }
 }
 
-.programs__photo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+.programs__wrapper {
+  padding-top: 40px;
   height: auto;
-  z-index: -1;
+  padding-bottom: 62px;
 
-  & img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+  @include vp-767 {
+    padding-bottom: 30px;
   }
 }

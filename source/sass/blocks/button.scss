@@ -16,6 +16,20 @@
   gap: 30px;
   transition: background-color $trans-default;
 
+  @include hover-focus {
+    background-color: $color-default-blue;
+    color: $color-default-white;
+
+    & .button__mark {
+      background-color: $color-default-white;
+      color: $color-default-blue;
+
+      & svg {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
   & .button__mark {
     border-radius: 50%;
     width: 46px;
@@ -30,6 +44,12 @@
       width: 34px;
       height: 34px;
     }
+  }
+
+  @include vp-767 {
+    font-size: 12px;
+    padding: 3px 3px 3px 20px;
+    gap: 20px;
   }
 
   &--no-text {
@@ -54,25 +74,5 @@
       background-color: $color-default-white;
       color: $color-default-blue;
     }
-  }
-
-  @include hover-focus {
-    background-color: $color-default-blue;
-    color: $color-default-white;
-
-    & .button__mark {
-      background-color: $color-default-white;
-      color: $color-default-blue;
-
-      & svg {
-        transform: rotate(45deg);
-      }
-    }
-  }
-
-  @include vp-767 {
-    font-size: 12px;
-    padding: 3px 3px 3px 20px;
-    gap: 20px;
   }
 }

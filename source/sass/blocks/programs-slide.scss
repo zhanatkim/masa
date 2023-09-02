@@ -1,0 +1,107 @@
+.programs-slide {
+  position: relative;
+  width: 392px;
+  height: auto;
+  border-radius: 12px;
+  overflow: hidden;
+
+  @include vp-1199 {
+    width: 324px;
+  }
+
+  @include vp-767 {
+    width: 290px;
+  }
+}
+
+.programs-slide__name {
+  position: relative;
+  margin: 0;
+  padding: 18px 18px 6px;
+  width: 55%;
+  // width: 194px;
+  border-radius: 12px 12px 0px 0px;
+  background-color: $color-default-white;
+  color: $color-default-blue;
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 400;
+
+  &::after {
+    content: "";
+    background-image: url("../img/svg/header-slide-angle.svg");
+    background-position: top;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    bottom: 0;
+    right: -17px;
+    transform: rotate(-90deg);
+  }
+
+  @include vp-1199 {
+    width: 60%;
+  }
+
+  @include vp-767 {}
+}
+
+.programs-slide__container {
+  padding: 71.42% 20px 20px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  @include vp-1199 {
+    padding-top: 285px;
+  }
+
+  @include vp-767 {
+    padding: 271px 10px 18px;
+  }
+}
+
+.programs-slide__inner {
+  padding: 12px 18px 15px;
+  width: 91.19%;
+  // width: 321px;
+  display: flex;
+  border-radius: 0px 12px 12px 12px;
+  background-color: $color-default-white;
+  gap: 16px;
+
+  & p {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  @include vp-1199 {
+  }
+
+  @include vp-767 {
+    width: 100%;
+  }
+}
+
+.programs-slide__photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top left;
+  }
+}
