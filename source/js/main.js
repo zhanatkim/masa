@@ -4,7 +4,10 @@ import {CustomSelect} from './modules/select/custom-select';
 import {Form} from './modules/form-validate/form';
 import './modules/menu';
 import {initAccordions} from './modules/accordion/init-accordion';
+import {newsCards} from './mocks';
 
+import {createCardsList} from './modules/render-news-cards';
+import {setFilteredSlides} from './modules/news-filter';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -22,6 +25,8 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
     initAccordions();
     initModals();
+    createCardsList(newsCards);
+    setFilteredSlides();
     const select = new CustomSelect();
     select.init();
     const form = new Form();

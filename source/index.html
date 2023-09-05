@@ -423,10 +423,19 @@
         </section>
         <section class="news">
           <h2 class="news__title title title--medium">Новости и материалы</h2>
+          <div class="news__tubs">
+            <button class="news__tub news__tub--is-active" type="button" data-id="default">общее</button>
+            <button class="news__tub" type="button" data-id="volunteer">Волонтёрство</button>
+            <button class="news__tub" type="button" data-id="probation">Стажировки</button>
+            <button class="news__tub" type="button" data-id="career">Карьера</button>
+            <button class="news__tub" type="button" data-id="travel">путешествия</button>
+          </div>
 
           <div class="news__swiper swiper">
             <div class="news__wrapper swiper__wrapper swiper-wrapper"></div>
+
             <div class="news__pagination swiper__pagination swiper-pagination"></div>
+
             <div class="news__button news__button--prev swiper-button swiper-button--prev swiper-button-prev">
               <span class="visually-hidden">Предыдущий слайд</span>
               <svg  width="11" height="12" stroke="currentColor">
@@ -508,7 +517,7 @@
       </footer>
     </div>
 
-    <!-- Модалки -->
+    <!-- Модальное окно -->
     <div class="modal" data-modal="call-request">
       <div class="modal__wrapper">
         <div class="modal__overlay" data-close-modal></div>
@@ -541,12 +550,12 @@
                   </span>
                 </button>
                 <ul class="modal__custom-select-list custom-select__list" role="listbox">
-                  <li class="custom-select__item" tabindex="0" data-select-value="Санкт-Петербург-1" aria-selected="false" role="option">Санкт-Петербург</li>
-                  <li class="custom-select__item" tabindex="0" data-select-value="Санкт-Петербург-2" aria-selected="false" role="option">Санкт-Петербург</li>
-                  <li class="custom-select__item" tabindex="0" data-select-value="Санкт-Петербург-3" aria-selected="false" role="option">Санкт-Петербург</li>
-                  <li class="custom-select__item" tabindex="0" data-select-value="Санкт-Петербург-4" aria-selected="false" role="option">Санкт-Петербург</li>
-                  <li class="custom-select__item" tabindex="0" data-select-value="Санкт-Петербург-5" aria-selected="false" role="option">Санкт-Петербург</li>
-                  <li class="custom-select__item" tabindex="0" data-select-value="Санкт-Петербург-6" aria-selected="false" role="option">Санкт-Петербург</li>
+                  <li class="custom-select__item" tabindex="0" data-select-value="Санкт-Петербург" aria-selected="false" role="option">Санкт-Петербург</li>
+                  <li class="custom-select__item" tabindex="0" data-select-value="Санкт-Петербург" aria-selected="false" role="option">Санкт-Петербург</li>
+                  <li class="custom-select__item" tabindex="0" data-select-value="Санкт-Петербург" aria-selected="false" role="option">Санкт-Петербург</li>
+                  <li class="custom-select__item" tabindex="0" data-select-value="Санкт-Петербург" aria-selected="false" role="option">Санкт-Петербург</li>
+                  <li class="custom-select__item" tabindex="0" data-select-value="Санкт-Петербург" aria-selected="false" role="option">Санкт-Петербург</li>
+                  <li class="custom-select__item" tabindex="0" data-select-value="Санкт-Петербург" aria-selected="false" role="option">Санкт-Петербург</li>
                 </ul>
               </div>
 
@@ -573,6 +582,166 @@
         </div>
       </div>
     </div>
+
+    <!-- Шаблон новостей -->
+    <template id="news-card">
+      <div class="news__slide news-slide news-slide--is-active swiper__slide swiper-slide">
+        <div class="news-slide__wrapper">
+          <span class="news-slide__date"></span>
+          <h3 class="news-slide__title title"></h3>
+          <div class="news-slide__inner">
+            <p class="news-slide__text"></p>
+            <a class="news-slide__button button button--no-text" href="#">
+              <span class="visually-hidden">Читать статью</span>
+              <span class="button__mark">
+                <svg width="10" height="10" stroke="currentColor">
+                  <use xlink:href="img/sprite.svg#button-arrow"></use>
+                </svg>
+            </a>
+          </div>
+        </div>
+        <div class="news-slide__photo"></div>
+      </div>
+    </template>
+    <!--
+              <div class="news__slide news-slide news-slide--is-active swiper__slide swiper-slide" data-theme="probation">
+                <div class="news-slide__wrapper">
+                  <span class="news-slide__date">23/03/2023</span>
+                  <h3 class="news-slide__title title">Интервью с&nbsp;участницей программы стажировки</h3>
+                  <div class="news-slide__inner">
+                    <p>Саша рассказывает, как попала в&nbsp;программу и&nbsp;как прошла 6-месячная стажировка в&nbsp;ISOFound</p>
+                    <a class="news-slide__button button button--no-text" href="#">
+                      <span class="visually-hidden">Читать статью</span>
+                      <span class="button__mark">
+                        <svg width="10" height="10" stroke="currentColor">
+                          <use xlink:href="img/sprite.svg#button-arrow"></use>
+                        </svg>
+                    </a>
+                  </div>
+                </div>
+                <div class="news-slide__photo">
+                  <picture>
+                    <source type="image/webp" srcset="img/photos/news-card-1-2x.webp 2x, img/photos/news-card-1-1x.webp 1x" width="604" height="400">
+                    <img src="img/photos/news-card-1-1x.jpg" srcset="img/photos/news-card-1-2x.jpg 2x" width="604" height="400" alt="Интервью девушки.">
+                  </picture>
+                </div>
+              </div>
+
+              <div class="news__slide news-slide news-slide--is-active swiper__slide swiper-slide" data-theme="travel">
+                <div class="news-slide__wrapper">
+                  <span class="news-slide__date">20/03/2023</span>
+                  <h3 class="news-slide__title title">Путешествуем по&nbsp;Израилю</h3>
+                  <div class="news-slide__inner">
+                    <p>Какие места посещают наши студенты весной</p>
+                    <a class="news-slide__button button button--no-text" href="#">
+                      <span class="visually-hidden">Читать статью</span>
+                      <span class="button__mark">
+                        <svg width="10" height="10" stroke="currentColor">
+                          <use xlink:href="img/sprite.svg#button-arrow"></use>
+                        </svg>
+                    </a>
+                  </div>
+                </div>
+                <div class="news-slide__photo">
+                  <picture>
+                    <source type="image/webp" srcset="img/photos/news-card-2-2x.webp 2x, img/photos/news-card-2-1x.webp 1x" width="604" height="400">
+                    <img src="img/photos/news-card-2-1x.jpg" srcset="img/photos/news-card-2-2x.jpg 2x" width="604" height="400" alt="Интервью девушки.">
+                  </picture>
+                </div>
+              </div>
+
+              <div class="news__slide news-slide news-slide--is-active swiper__slide swiper-slide" data-theme="volunteer">
+                <div class="news-slide__wrapper">
+                  <span class="news-slide__date">17/03/2023</span>
+                  <h3 class="news-slide__title title">Новая программа волонтёрства</h3>
+                  <div class="news-slide__inner">
+                    <p>Программа помощи детям длительностью 4&nbsp;месяца</p>
+                    <a class="news-slide__button button button--no-text" href="#">
+                      <span class="visually-hidden">Читать статью</span>
+                      <span class="button__mark">
+                        <svg width="10" height="10" stroke="currentColor">
+                          <use xlink:href="img/sprite.svg#button-arrow"></use>
+                        </svg>
+                    </a>
+                  </div>
+                </div>
+                <div class="news-slide__photo">
+                  <picture>
+                    <source type="image/webp" srcset="img/photos/news-card2-3-2x.webp 2x, img/photos/news-card2-3-1x.webp 1x" width="286" height="400">
+                    <img src="img/photos/news-card2-3-1x.jpg" srcset="img/photos/news-card2-3-2x.jpg 2x" width="286" height="400" alt="Интервью девушки.">
+                  </picture>
+                </div>
+              </div>
+
+              <div class="news__slide news-slide news-slide--is-active swiper__slide swiper-slide" data-theme="career">
+                <div class="news-slide__wrapper">
+                  <span class="news-slide__date">10/03/2023</span>
+                  <h3 class="news-slide__title title">Построй свою карьеру</h3>
+                  <div class="news-slide__inner">
+                    <p>Ведущие компании  готовы трудоустроить выпускников стажировки</p>
+                    <a class="news-slide__button button button--no-text" href="#">
+                      <span class="visually-hidden">Читать статью</span>
+                      <span class="button__mark">
+                        <svg width="10" height="10" stroke="currentColor">
+                          <use xlink:href="img/sprite.svg#button-arrow"></use>
+                        </svg>
+                    </a>
+                  </div>
+                </div>
+                <div class="news-slide__photo">
+                  <picture>
+                    <source type="image/webp" srcset="img/photos/news-card-4-2x.webp 2x, img/photos/news-card-4-1x.webp 1x" width="604" height="400">
+                    <img src="img/photos/news-card-4-1x.jpg" srcset="img/photos/news-card-4-2x.jpg 2x" width="604" height="400" alt="Интервью девушки.">
+                  </picture>
+                </div>
+              </div>
+
+              <div class="news__slide news-slide news-slide--is-active swiper__slide swiper-slide" data-theme="probation">
+                <div class="news-slide__wrapper">
+                  <span class="news-slide__date">23/03/2023</span>
+                  <h3 class="news-slide__title title">Интервью с&nbsp;участницей программы стажировки</h3>
+                  <div class="news-slide__inner">
+                    <p>Саша рассказывает, как попала в&nbsp;программу и&nbsp;как прошла 6-месячная стажировка в&nbsp;ISOFound</p>
+                    <a class="news-slide__button button button--no-text" href="#">
+                      <span class="visually-hidden">Читать статью</span>
+                      <span class="button__mark">
+                        <svg width="10" height="10" stroke="currentColor">
+                          <use xlink:href="img/sprite.svg#button-arrow"></use>
+                        </svg>
+                    </a>
+                  </div>
+                </div>
+                <div class="news-slide__photo">
+                  <picture>
+                    <source type="image/webp" srcset="img/photos/news-card-1-2x.webp 2x, img/photos/news-card-1-1x.webp 1x" width="604" height="400">
+                    <img src="img/photos/news-card-1-1x.jpg" srcset="img/photos/news-card-1-2x.jpg 2x" width="604" height="400" alt="Интервью девушки.">
+                  </picture>
+                </div>
+              </div>
+
+              <div class="news__slide news-slide news-slide--is-active swiper__slide swiper-slide" data-theme="travel">
+                <div class="news-slide__wrapper">
+                  <span class="news-slide__date">20/03/2023</span>
+                  <h3 class="news-slide__title title">Путешествуем по&nbsp;Израилю</h3>
+                  <div class="news-slide__inner">
+                    <p>Какие места посещают наши студенты весной</p>
+                    <a class="news-slide__button button button--no-text" href="#">
+                      <span class="visually-hidden">Читать статью</span>
+                      <span class="button__mark">
+                        <svg width="10" height="10" stroke="currentColor">
+                          <use xlink:href="img/sprite.svg#button-arrow"></use>
+                        </svg>
+                    </a>
+                  </div>
+                </div>
+                <div class="news-slide__photo">
+                  <picture>
+                    <source type="image/webp" srcset="img/photos/news-card-2-2x.webp 2x, img/photos/news-card-2-1x.webp 1x" width="604" height="400">
+                    <img src="img/photos/news-card-2-1x.jpg" srcset="img/photos/news-card-2-2x.jpg 2x" width="604" height="400" alt="Интервью девушки.">
+                  </picture>
+                </div>
+              </div> -->
+
 
     <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>
