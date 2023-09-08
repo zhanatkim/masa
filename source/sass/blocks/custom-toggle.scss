@@ -76,4 +76,44 @@
       background-color: transparent;
     }
   }
+
+  &--dark {
+    .custom-toggle__icon {
+      border: 1px solid rgba($color-default-white, 0.7);
+    }
+
+    @include hover-focus {
+       & input + .custom-toggle__icon {
+        outline: none;
+        border: 1px solid $color-default-white;
+      }
+    }
+
+    input:checked + .custom-toggle__icon  {
+      background-color: $color-default-white;
+      border: 1px solid $color-default-white;
+
+      & svg {
+        display: block;
+        color: $color-default-blue;
+      }
+    }
+
+    @include hover-focus {
+      input:checked + .custom-toggle__icon {
+        outline: none;
+        background-color: transparent;
+
+        & svg {
+          color: $color-default-white;
+        }
+      }
+    }
+  }
+
+  &:disabled {
+    background-color: $color-disable-gray;
+    border: 1px solid $color-disable-gray;
+    color: $color-default-white;
+  }
 }

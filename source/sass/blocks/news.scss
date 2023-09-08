@@ -4,9 +4,6 @@
   grid-template-columns: 1fr;
   gap: 40px;
   background-color: $color-default-beige;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
 
   @include vp-1319 {
     padding-left: 40px;

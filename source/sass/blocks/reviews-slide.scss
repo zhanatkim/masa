@@ -1,0 +1,156 @@
+.reviews-slide {
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  // min-width: 50%;
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid $color-default-blue;
+
+  @include vp-1199 {
+    width: 560px;
+  }
+
+  @include vp-767 {
+    padding: 30px 15px;
+    min-width: 100%;
+  }
+}
+
+.reviews-slide__top,
+.reviews-slide__name,
+.reviews-slide__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reviews-slide__top {
+  @include vp-767 {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+}
+
+.reviews-slide__photo {
+  width: 90px;
+  height: 90px;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @include vp-1199 {
+  }
+
+  @include vp-767 {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.reviews-slide__name {
+  gap: 15px;
+
+  & p {
+    margin: 0;
+    padding: 0;
+    color: $color-default-blue;
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 90px;
+
+    @include vp-1199 {
+      font-size: 20px;
+    }
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+}
+
+.reviews-slide__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 25px;
+
+  & li {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 11px;
+
+    @include vp-767 {
+      gap: 8px;
+    }
+  }
+}
+
+.reviews-slide__key {
+  color: $color-default-blue;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.reviews-slide__value {
+  font-size: 14px;
+  line-height: 18px;
+
+  @include vp-1199 {
+    line-height: 20px;
+  }
+
+  @include vp-767 {
+    font-size: 12px;
+    line-height: 14px;
+    opacity: 0.9;
+  }
+}
+
+.reviews-slide__bottom {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+
+  @include vp-767 {
+    gap: 20px;
+  }
+
+  & p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 26px;
+
+    @include vp-1199 {
+      line-height: 20px;
+    }
+
+    @include vp-767 {
+      font-size: 14px;
+    }
+  }
+}
+
+.reviews-slide__title {
+  font-size: 24px;
+  line-height: 26px;
+
+  @include vp-1199 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  @include vp-767 {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}

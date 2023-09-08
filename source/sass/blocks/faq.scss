@@ -1,0 +1,223 @@
+.faq {
+  padding: 0 calc(50% - 514px);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  background-color: $color-default-beige;
+
+  @include vp-1319 {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @include vp-1199 {
+    padding: 0 45px;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  @include vp-767 {
+    padding: 0 15px;
+    gap: 30px;
+  }
+}
+
+.faq__title {
+  padding: 11px 9px 13px;
+  text-align: center;
+
+  @include vp-1199 {
+    padding: 13px;
+  }
+
+  @include vp-767 {
+    padding: 5px 0 6px;
+  }
+}
+
+.faq__container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.faq__element {
+  padding: 40px;
+  border-radius: 14px;
+  border: 1px solid $color-default-blue;
+  color: $color-default-blue;
+  transition: background-color $trans-default;
+
+  @include hover-focus {
+    background-color: $color-default-white;
+
+    & .faq__mark {
+      background-color: $color-default-white;
+
+      &::before,
+      &::after {
+        background-color: $color-default-blue;
+      }
+    }
+    @include active {
+      .faq__button {
+        color: $color-active-navy;
+      }
+
+      .faq__mark {
+        background-color: $color-active-navy;
+        border-color: $color-active-navy;
+
+        &::before,
+        &::after {
+          background-color: $color-default-white;
+        }
+      }
+    }
+  }
+
+  &.is-active {
+    background-color: $color-default-blue;
+    color: $color-default-white;
+
+    & .faq__button {
+      color: $color-default-white;
+    }
+
+    & .faq__mark {
+      background-color: $color-default-white;
+
+      &::before {
+        background-color: $color-default-blue;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    @include hover-focus {
+      background-color: $color-default-blue;
+
+      & .faq__mark {
+        background-color: transparent;
+        border: 1px solid $color-default-white;
+
+        &::before {
+          background-color: $color-default-white;
+        }
+      }
+      @include active {
+        background-color: $color-active-navy;
+
+        & .faq__mark {
+          background-color: $color-default-white;
+          border: 1px solid $color-default-blue;
+
+          &::before {
+            background-color: $color-default-blue;
+          }
+        }
+      }
+    }
+  }
+
+  @include vp-1199 {
+   padding: 30px;
+  }
+
+  @include vp-767 {
+    padding: 20px 15px;
+  }
+}
+
+.faq__button {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  color: $color-default-blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28px;
+  line-height: 34px;
+  cursor: pointer;
+  transition: background-color $trans-default;
+
+  & span:not(.faq__mark) {
+    max-width: 63%;
+    text-align: start;
+
+    @include vp-1199 {
+      max-width: 66%;
+    }
+
+    @include vp-767 {
+      max-width: 72%;
+    }
+  }
+
+  @include vp-1199 {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  @include vp-767 {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+
+.faq__mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid $color-default-blue;
+  background-color: $color-default-blue;
+  position: relative;
+  transition: background-color $trans-default;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: $color-default-white;
+  }
+
+  &::before {
+    width: 18px;
+    height: 1px;
+    top: calc(50% + 0.5px);
+    left: 11px
+  }
+
+  &::after {
+    width: 1px;
+    height: 18px;
+    left: calc(50% - 0.5px);
+    top: 11px
+  }
+}
+
+.faq__text p {
+  margin: 0;
+  padding: 0;
+  padding-top: 30px;
+  font-size: 16px;
+  line-height: 26px;
+  max-width: 63%;
+  color: $color-default-beige;
+
+  @include vp-1199 {
+    line-height: 20px;
+    max-width: 66%;
+  }
+
+  @include vp-767 {
+    font-size: 14px;
+    max-width: 100%;
+  }
+}

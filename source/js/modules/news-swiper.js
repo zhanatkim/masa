@@ -8,8 +8,27 @@ const renderBullets = (index, className) => {
 export const newsSwiper = new Swiper('.news__swiper', {
   cssmode: true,
   // centeredSlides: true,
-  slidesPerView: 3,
-  spaceBetween: 32,
+  slidesPerView: 1,
+  grid: {
+    rows: 2,
+  },
+  spaceBetween: 20,
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      grid: {
+        rows: 2,
+      },
+      spaceBetween: 30,
+    },
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 32,
+      grid: {
+        rows: 1,
+      },
+    },
+  },
   pagination: {
     el: '.news__pagination',
     clickable: true,
