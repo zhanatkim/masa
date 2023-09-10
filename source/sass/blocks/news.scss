@@ -131,6 +131,8 @@
 }
 
 .news__wrapper {
+  max-width: 100%;
+  width: 100%;
   height: auto;
 
   @include vp-1199 {

@@ -8,6 +8,7 @@ const buttonsWrapper = document.querySelector('.news__tubs');
 const renderBullets = (index, className) => '<span class="' + className + '">' + (index + 1) + '</span>';
 
 const newsSwiper = new Swiper('.news__swiper', {
+  // cssMode: true,
   slidesPerView: 1,
   grid: {
     rows: 2,
@@ -41,10 +42,11 @@ const newsSwiper = new Swiper('.news__swiper', {
 });
 
 const setWideFirstSlide = () => {
+  const firstSlide = Array.from(slidesWrapper.querySelectorAll('.news-slide--is-open'))[0];
   if (!breakpoint.matches) {
+    delete firstSlide.dataset.firstSlide;
     return;
   }
-  const firstSlide = Array.from(slidesWrapper.querySelectorAll('.news-slide--is-open'))[0];
   firstSlide.dataset.firstSlide = true;
 };
 

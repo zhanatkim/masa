@@ -4275,7 +4275,7 @@ button,
 
 .programs-slide {
   position: relative;
-  width: 392px;
+  width: 32%;
   height: auto;
   border-radius: 12px;
   overflow: hidden;
@@ -4287,7 +4287,7 @@ button,
 }
 @media (max-width: 767px) {
   .programs-slide {
-    width: 290px;
+    width: 100%;
   }
 }
 
@@ -4781,6 +4781,8 @@ button,
 }
 
 .news__wrapper {
+  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 @media (max-width: 1199px) {
@@ -4817,8 +4819,8 @@ button,
 }
 @media (max-width: 1199px) {
   .news-slide {
+    max-width: calc((100% - 30px) / 2);
     height: calc((100% - 196px) / 2);
-    max-width: unset;
   }
 }
 @media (max-width: 767px) {
@@ -4886,10 +4888,7 @@ button,
 .news-slide__date::before, .news-slide__date::after {
   content: "";
   position: absolute;
-  background-image: url("../img/svg/news-angle-beige.svg");
-  background-position: top;
-  background-size: 100%;
-  background-repeat: no-repeat;
+  background: radial-gradient(circle at 100% 0, transparent 16px, #f0efe9 14px);
   position: absolute;
   width: 16px;
   height: 16px;
@@ -4913,10 +4912,7 @@ button,
 .news-slide__title::after {
   content: "";
   position: absolute;
-  background-image: url("../img/svg/news-angle-beige.svg");
-  background-position: top;
-  background-size: 100%;
-  background-repeat: no-repeat;
+  background: radial-gradient(circle at 100% 0, transparent 16px, #f0efe9 14px);
   position: absolute;
   width: 16px;
   height: 16px;
@@ -4941,10 +4937,7 @@ button,
 .news-slide__inner::after {
   content: "";
   position: absolute;
-  background-image: url("../img/svg/news-angle-beige.svg");
-  background-position: top;
-  background-size: 100%;
-  background-repeat: no-repeat;
+  background: radial-gradient(circle at 100% 0, transparent 16px, #f0efe9 14px);
   position: absolute;
   width: 16px;
   height: 16px;

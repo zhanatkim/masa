@@ -1,6 +1,6 @@
 .programs-slide {
   position: relative;
-  width: 392px;
+  width: 32%;
   height: auto;
   border-radius: 12px;
   overflow: hidden;
@@ -10,7 +10,7 @@
   }
 
   @include vp-767 {
-    width: 290px;
+    width: 100%;
   }
 }
 

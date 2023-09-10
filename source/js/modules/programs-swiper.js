@@ -3,6 +3,7 @@ import Swiper from '../vendor/swiper';
 // Свайпер для Программ
 
 export const programsSwiper = new Swiper('.programs__swiper', {
+  cssMode: true,
   slidesPerView: 1,
   spaceBetween: 3,
   breakpoints: {
