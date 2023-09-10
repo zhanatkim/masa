@@ -1,4 +1,5 @@
 .news {
+  height: 100%;
   padding: 120px calc(50% - 620px);
   display: grid;
   grid-template-columns: 1fr;
@@ -90,13 +91,13 @@
 
 .news__swiper {
   width: 100%;
+  height: 100%;
   position: relative;
   display: flex;
   align-items: center;
   padding-bottom: 72px;
 
   & .news__pagination {
-
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -119,9 +120,7 @@
         border-radius: 50%;
         color: $color-default-white;
         opacity: 1;
-
       }
-
     }
   }
 
@@ -134,4 +133,7 @@
 .news__wrapper {
   height: auto;
 
+  @include vp-1199 {
+    height: 100%;
+  }
 }

@@ -1,13 +1,13 @@
 import Swiper from '../vendor/swiper';
+
 // Свайпер для Новости и материалы.
+const breakpoint = window.matchMedia('(min-width:1200px)');
+const slidesWrapper = document.querySelector('.news__wrapper');
+const buttonsWrapper = document.querySelector('.news__tubs');
 
-const renderBullets = (index, className) => {
-  return '<span class="' + className + '">' + (index + 1) + '</span>';
-};
+const renderBullets = (index, className) => '<span class="' + className + '">' + (index + 1) + '</span>';
 
-export const newsSwiper = new Swiper('.news__swiper', {
-  cssmode: true,
-  // centeredSlides: true,
+const newsSwiper = new Swiper('.news__swiper', {
   slidesPerView: 1,
   grid: {
     rows: 2,
@@ -16,10 +16,10 @@ export const newsSwiper = new Swiper('.news__swiper', {
   breakpoints: {
     768: {
       slidesPerView: 2,
+      spaceBetween: 30,
       grid: {
         rows: 2,
       },
-      spaceBetween: 30,
     },
     1200: {
       slidesPerView: 3,
@@ -39,5 +39,47 @@ export const newsSwiper = new Swiper('.news__swiper', {
     prevEl: '.news__button--prev',
   },
 });
-// newsSwiper.on('afterInit', setWideFirstSlide());
-// newsSwiper.on('update', setWideFirstSlide);
+
+const setWideFirstSlide = () => {
+  if (!breakpoint.matches) {
+    return;
+  }
+  const firstSlide = Array.from(slidesWrapper.querySelectorAll('.news-slide--is-open'))[0];
+  firstSlide.dataset.firstSlide = true;
+};
+
+
+const filterSlides = (evt) => {
+  if (!evt.target.closest('.news__tub')) {
+    return;
+  }
+  for (let i = 0; i < buttonsWrapper.children.length; i++) {
+    buttonsWrapper.children[i]. classList.remove('news__tub--is-active');
+  }
+  evt.target.classList.add('news__tub--is-active');
+
+  if (!slidesWrapper) {
+    return;
+  }
+  newsSwiper.slides.forEach((element) => element.classList.remove('news-slide--is-open'));
+  newsSwiper.slides.forEach((el) => delete el.dataset.firstSlide);
+
+  if (evt.target.dataset.id === 'default') {
+    newsSwiper.slides.forEach((element) => element.classList.add('news-slide--is-open'));
+    newsSwiper.update();
+  }
+  const filteredCards = newsSwiper.slides.filter((el) => el.dataset.theme === evt.target.dataset.id);
+
+  if (filteredCards.length === 0) {
+    return;
+  }
+  filteredCards.forEach((element) => element.classList.add('news-slide--is-open'));
+  newsSwiper.update();
+};
+
+buttonsWrapper.addEventListener('click', filterSlides);
+
+
+newsSwiper.on('afterInit', setWideFirstSlide());
+newsSwiper.on('update', setWideFirstSlide);
+breakpoint.addListener(setWideFirstSlide);
