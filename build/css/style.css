@@ -4956,7 +4956,6 @@ button,
 }
 @media (max-width: 1199px) {
   .news-slide {
-    width: calc((100% - 30px) / 2);
     height: calc((100% - 196px) / 2);
     max-width: calc((100% - 30px) / 2);
   }
