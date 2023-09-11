@@ -58,6 +58,7 @@
     label {
       .custom-toggle__icon {
         border: 1px solid $color-error-red;
+        background: rgba($color-error-red, 0.2);
       }
     }
   }

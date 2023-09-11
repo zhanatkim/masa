@@ -28,21 +28,24 @@
               <a class="nav__link" href="#about">О проекте</a>
             </li>
             <li class="nav__item" data-accordion="element">
-              <a class="nav__link" href="#programs" data-accordion="button">Программы</a>
-              <ul class="nav__sublist" data-accordion="content">
-                <li>
-                  <a class="nav__link" href="#">Стажировки</a>
-                </li>
-                <li>
-                  <a class="nav__link" href="#">Волонтёрство</a>
-                </li>
-                <li>
-                  <a class="nav__link" href="#">Учёба</a>
-                </li>
-                <li>
-                  <a class="nav__link" href="#">Религия</a>
-                </li>
-              </ul>
+              <button class="nav__submenu" type="button" data-accordion="button">Программы</button>
+              <div class="nav__content" data-accordion="content">
+                <ul class="nav__sublist">
+                  <li>
+                    <a class="nav__link" href="#">Стажировки</a>
+                  </li>
+                  <li>
+                    <a class="nav__link" href="#">Волонтёрство</a>
+                  </li>
+                  <li>
+                    <a class="nav__link" href="#">Учёба</a>
+                  </li>
+                  <li>
+                    <a class="nav__link" href="#">Религия</a>
+                  </li>
+                </ul>
+              </div>
+
             </li>
             <li class="nav__item">
               <a class="nav__link" href="#conditions">как поехать</a>
@@ -51,8 +54,27 @@
               <a class="nav__link nav__link--dark" href="#reviews">Отзывы</a>
             </li>
             <li class="nav__item" data-accordion="element">
-              <a class="nav__link nav__link--dark" href="#news" data-accordion="button">новости</a>
-              <ul class="nav__sublist" data-accordion="content"></ul>
+              <button class="nav__submenu" type="button" data-accordion="button">новости</button>
+              <div class="nav__content" data-accordion="content">
+                <ul class="nav__sublist">
+                  <li>
+                    <a class="nav__link" href="#">Общее</a>
+                  </li>
+                  <li>
+                    <a class="nav__link" href="#">Волонтёрство</a>
+                  </li>
+                  <li>
+                    <a class="nav__link" href="#">Стажировки</a>
+                  </li>
+                  <li>
+                    <a class="nav__link" href="#">Карьера</a>
+                  </li>
+                  <li>
+                    <a class="nav__link" href="#">путешествия</a>
+                  </li>
+                </ul>
+              </div>
+
             </li>
             <li class="nav__item">
               <a class="nav__link nav__link--dark" href="#contacts">Контакты</a>
@@ -395,7 +417,7 @@
             </div>
           </div>
         </section>
-        <section class="conditions">
+        <section class="conditions" id="conditions">
           <div class="conditions__column">
             <h2 class="conditions__title title title--medium">Как поехать</h2>
             <p>Свяжитесь с&nbsp;координатором, чтобы узнать полную информацию. Вы&nbsp;получите актуальные сведения о&nbsp;доступных программах и&nbsp;городах, в&nbsp;которых можете пройти программу.</p>
@@ -674,7 +696,7 @@
 
           </div>
         </section>
-        <section class="reviews">
+        <section class="reviews" id="reviews">
           <div class="reviews__swiper swiper">
             <h2 class="reviews__title title title--medium">Отзывы</h2>
             <div class="reviews__wrapper swiper__wrapper swiper-wrapper">
@@ -788,7 +810,7 @@
             </div>
           </div>
         </section>
-        <section class="contacts">
+        <section class="contacts" id="contacts">
           <div class="contacts__top">
             <h2 class="contacts__title title title--medium">Контакты</h2>
             <ul class="contacts__list">
@@ -810,7 +832,7 @@
         </section>
         <section class="form">
           <div class="form__container">
-            <div class="form__inner">
+            <div class="form__inner" data-form-validate data-callback="base">
               <h2 class="form__title title title--small">Напишите нам</h2>
               <p>Оставьте ваши контакты, если у&nbsp;вас остались вопросы&nbsp;&mdash; мы&nbsp;на&nbsp;них ответим!</p>
               <form method="post" action="https://echo.htmlacademy.ru/" novalidate>

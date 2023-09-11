@@ -137,5 +137,8 @@
 
   @include vp-1199 {
     height: 100%;
+    display: flex;
+    // display: grid;
+    // grid-template-columns: 50% 50%;
   }
 }

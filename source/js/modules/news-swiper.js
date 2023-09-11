@@ -8,9 +8,11 @@ const buttonsWrapper = document.querySelector('.news__tubs');
 const renderBullets = (index, className) => '<span class="' + className + '">' + (index + 1) + '</span>';
 
 const newsSwiper = new Swiper('.news__swiper', {
-  // cssMode: true,
+  cssMode: true,
+  freeMode: true,
   slidesPerView: 1,
   grid: {
+    fill: 'row',
     rows: 2,
   },
   spaceBetween: 20,
@@ -19,15 +21,13 @@ const newsSwiper = new Swiper('.news__swiper', {
       slidesPerView: 2,
       spaceBetween: 30,
       grid: {
+        fill: 'row',
         rows: 2,
       },
     },
     1200: {
       slidesPerView: 3,
       spaceBetween: 32,
-      grid: {
-        rows: 1,
-      },
     },
   },
   pagination: {

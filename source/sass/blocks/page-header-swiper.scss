@@ -59,23 +59,21 @@
   position: relative;
 
   &::after {
-    content: "";
-    background-image: url("../img/svg/header-slide-angle.svg");
-    background-position: top;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    position: absolute;
+    @include white-angle;
+
+    background: radial-gradient(circle at 100% 0, transparent 24px, $color-default-white 25px);
     width: 26px;
     height: 26px;
     top: 6px;
     right: -25px;
+    transform: rotate(90deg);
 
     @include vp-1199 {
       top: 2px;
     }
 
     @include vp-767 {
-      top: 0;
+      background: radial-gradient(circle at 100% 0, transparent 8px, $color-default-white 9px);
       right: -9px;
       width: 10px;
       height: 10px;
@@ -124,19 +122,15 @@
   position: relative;
 
   &::after {
-    content: "";
-    background-image: url("../img/svg/header-slide-angle.svg");
-    background-position: top;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    position: absolute;
+    @include white-angle;
+    background: radial-gradient(circle at 100% 0, transparent 18px, $color-default-white 19px);
     width: 20px;
     height: 20px;
     bottom: 0;
     right: -19px;
-    transform: rotate(-90deg);
 
     @include vp-767 {
+      background: radial-gradient(circle at 100% 0, transparent 8px, $color-default-white 9px);
       bottom: 0;
       right: -9px;
       width: 10px;
@@ -176,16 +170,13 @@
     width: min-content;
 
     &::after {
-      content: "";
-      background-image: url("../img/svg/header-slide-angle.svg");
-      background-position: top;
-      background-size: 100%;
-      background-repeat: no-repeat;
-      position: absolute;
+      @include white-angle;
+      background: radial-gradient(circle at 100% 0, transparent 8px, $color-default-white 9px);
       width: 10px;
       height: 10px;
-      top: 0;
+      top: -1px;
       right: -9px;
+      transform: rotate(90deg);
     }
   }
 }

@@ -17,7 +17,7 @@
 
     & .nav__list {
       position: fixed;
-      right: calc(50% - 620px);
+      right: calc(50% - 610px);
       top: 88px;
       width: 286px;
 
@@ -62,13 +62,20 @@
   gap: 16px;
 }
 
-.nav__link {
+.nav__link,
+.nav__submenu {
   color: $color-default-white;
 }
 
-.nav__link[data-accordion="button"] {
+.nav__submenu {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
   position: relative;
+  text-transform: uppercase;
   padding-right: 22px;
+  cursor: pointer;
 
   &::after {
     content: "";

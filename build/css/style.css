@@ -2190,34 +2190,7 @@ button,
   gap: 30px;
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
-}
-@media (hover: hover) {
-  .button:hover:not(.focus-visible) {
-    background-color: #316dc2;
-    color: #ffffff;
-  }
-  .button:hover:not(.focus-visible) .button__mark {
-    background-color: #ffffff;
-    color: #316dc2;
-  }
-  .button:hover:not(.focus-visible) .button__mark svg {
-    -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
-  }
-}
-.button.focus-visible:focus {
-  background-color: #316dc2;
-  color: #ffffff;
-}
-.button.focus-visible:focus .button__mark {
-  background-color: #ffffff;
-  color: #316dc2;
-}
-.button.focus-visible:focus .button__mark svg {
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
+  cursor: pointer;
 }
 .button .button__mark {
   border-radius: 50%;
@@ -2241,6 +2214,50 @@ button,
     height: 34px;
   }
 }
+@media (hover: hover) {
+  .button:hover:not(.focus-visible) {
+    background-color: #316dc2;
+    color: #ffffff;
+  }
+  .button:hover:not(.focus-visible) .button__mark {
+    background-color: #ffffff;
+    color: #316dc2;
+  }
+  .button:hover:not(.focus-visible) .button__mark svg {
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .button:hover:not(.focus-visible):active {
+    background-color: #316dc2;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .button:hover:not(.focus-visible):active .button__mark {
+    background-color: #ffffff;
+    color: rgba(49, 109, 194, 0.7);
+  }
+}
+.button.focus-visible:focus {
+  background-color: #316dc2;
+  color: #ffffff;
+}
+.button.focus-visible:focus .button__mark {
+  background-color: #ffffff;
+  color: #316dc2;
+}
+.button.focus-visible:focus .button__mark svg {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.button.focus-visible:focus:active {
+  background-color: #316dc2;
+  color: rgba(255, 255, 255, 0.7);
+}
+.button.focus-visible:focus:active .button__mark {
+  background-color: #ffffff;
+  color: rgba(49, 109, 194, 0.7);
+}
 @media (max-width: 767px) {
   .button {
     font-size: 12px;
@@ -2262,6 +2279,46 @@ button,
   width: 30px;
   height: 30px;
 }
+@media (hover: hover) {
+  .button--no-text:hover:not(.focus-visible) {
+    background-color: transparent;
+  }
+  .button--no-text:hover:not(.focus-visible) .button__mark {
+    background-color: #ffffff;
+    color: #316dc2;
+  }
+  .button--no-text:hover:not(.focus-visible) .button__mark svg {
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .button--no-text:hover:not(.focus-visible):active {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .button--no-text:hover:not(.focus-visible):active .button__mark {
+    background-color: #ffffff;
+    color: rgba(49, 109, 194, 0.7);
+  }
+}
+.button--no-text.focus-visible:focus {
+  background-color: transparent;
+}
+.button--no-text.focus-visible:focus .button__mark {
+  background-color: #ffffff;
+  color: #316dc2;
+}
+.button--no-text.focus-visible:focus .button__mark svg {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.button--no-text.focus-visible:focus:active {
+  color: rgba(255, 255, 255, 0.7);
+}
+.button--no-text.focus-visible:focus:active .button__mark {
+  background-color: #ffffff;
+  color: rgba(49, 109, 194, 0.7);
+}
 .button--form {
   color: #ffffff;
   border: 1px solid #ffffff;
@@ -2269,6 +2326,59 @@ button,
 .button--form .button__mark {
   background-color: #ffffff;
   color: #316dc2;
+}
+@media (hover: hover) {
+  .button--form:hover:not(.focus-visible) {
+    background-color: #ffffff;
+    color: #316dc2;
+  }
+  .button--form:hover:not(.focus-visible) .button__mark {
+    background-color: #316dc2;
+    color: #ffffff;
+  }
+  .button--form:hover:not(.focus-visible) .button__mark svg {
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .button--form:hover:not(.focus-visible):active {
+    background-color: #ffffff;
+    color: rgba(49, 109, 194, 0.7);
+  }
+  .button--form:hover:not(.focus-visible):active .button__mark {
+    background-color: #316dc2;
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+.button--form.focus-visible:focus {
+  background-color: #ffffff;
+  color: #316dc2;
+}
+.button--form.focus-visible:focus .button__mark {
+  background-color: #316dc2;
+  color: #ffffff;
+}
+.button--form.focus-visible:focus .button__mark svg {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.button--form.focus-visible:focus:active {
+  background-color: #ffffff;
+  color: rgba(49, 109, 194, 0.7);
+}
+.button--form.focus-visible:focus:active .button__mark {
+  background-color: #316dc2;
+  color: rgba(255, 255, 255, 0.7);
+}
+.button:disabled {
+  border-color: #a9afb7;
+  color: #a9afb7;
+  background-color: transparent;
+}
+.button:disabled .button__mark {
+  background-color: #a9afb7;
+  color: #ffffff;
 }
 
 .modal {
@@ -2400,7 +2510,7 @@ button,
     outline: none;
     opacity: 0.5;
   }
-  .modal__close-btn:hover:not(.focus-visible).focus-visible:active {
+  .modal__close-btn:hover:not(.focus-visible):active {
     opacity: 1;
   }
 }
@@ -2408,7 +2518,7 @@ button,
   outline: none;
   opacity: 0.5;
 }
-.modal__close-btn.focus-visible:focus.focus-visible:active {
+.modal__close-btn.focus-visible:focus:active {
   opacity: 1;
 }
 
@@ -2641,6 +2751,7 @@ button,
 }
 .custom-toggle.is-invalid label .custom-toggle__icon {
   border: 1px solid #ff5e66;
+  background: rgba(255, 94, 102, 0.2);
 }
 @media (hover: hover) {
   .custom-toggle:hover:not(.focus-visible) .custom-toggle__icon {
@@ -2837,7 +2948,7 @@ button,
   background-color: #316dc2;
   color: #ffffff;
 }
-.custom-select__item[aria-selected=true].focus-visible:active {
+.custom-select__item[aria-selected=true]:active {
   background-color: #316dc2;
   color: #ffffff;
 }
@@ -2845,7 +2956,7 @@ button,
   .custom-select__item:hover:not(.focus-visible) {
     color: #316dc2;
   }
-  .custom-select__item:hover:not(.focus-visible).focus-visible:active {
+  .custom-select__item:hover:not(.focus-visible):active {
     background-color: #316dc2;
     color: #ffffff;
   }
@@ -3279,15 +3390,17 @@ button,
 }
 .page-header-swiper__text::after {
   content: "";
-  background-image: url("../img/svg/header-slide-angle.svg");
-  background-position: top;
-  background-size: 100%;
-  background-repeat: no-repeat;
   position: absolute;
+  background: radial-gradient(circle at 100% 0, transparent 15px, #ffffff 16px);
+  position: absolute;
+  background: radial-gradient(circle at 100% 0, transparent 24px, #ffffff 25px);
   width: 26px;
   height: 26px;
   top: 6px;
   right: -25px;
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 @media (max-width: 1199px) {
   .page-header-swiper__text::after {
@@ -3296,7 +3409,7 @@ button,
 }
 @media (max-width: 767px) {
   .page-header-swiper__text::after {
-    top: 0;
+    background: radial-gradient(circle at 100% 0, transparent 8px, #ffffff 9px);
     right: -9px;
     width: 10px;
     height: 10px;
@@ -3350,21 +3463,18 @@ button,
 }
 .page-header-swiper__mark::after {
   content: "";
-  background-image: url("../img/svg/header-slide-angle.svg");
-  background-position: top;
-  background-size: 100%;
-  background-repeat: no-repeat;
   position: absolute;
+  background: radial-gradient(circle at 100% 0, transparent 15px, #ffffff 16px);
+  position: absolute;
+  background: radial-gradient(circle at 100% 0, transparent 18px, #ffffff 19px);
   width: 20px;
   height: 20px;
   bottom: 0;
   right: -19px;
-  -webkit-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-          transform: rotate(-90deg);
 }
 @media (max-width: 767px) {
   .page-header-swiper__mark::after {
+    background: radial-gradient(circle at 100% 0, transparent 8px, #ffffff 9px);
     bottom: 0;
     right: -9px;
     width: 10px;
@@ -3409,15 +3519,17 @@ button,
   }
   .page-header-swiper__inner::after {
     content: "";
-    background-image: url("../img/svg/header-slide-angle.svg");
-    background-position: top;
-    background-size: 100%;
-    background-repeat: no-repeat;
     position: absolute;
+    background: radial-gradient(circle at 100% 0, transparent 15px, #ffffff 16px);
+    position: absolute;
+    background: radial-gradient(circle at 100% 0, transparent 8px, #ffffff 9px);
     width: 10px;
     height: 10px;
-    top: 0;
+    top: -1px;
     right: -9px;
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
   }
 }
 
@@ -3488,7 +3600,7 @@ button,
 }
 .nav--is-active .nav__list {
   position: fixed;
-  right: calc(50% - 620px);
+  right: calc(50% - 610px);
   top: 88px;
   width: 286px;
 }
@@ -3538,15 +3650,22 @@ button,
   gap: 16px;
 }
 
-.nav__link {
+.nav__link,
+.nav__submenu {
   color: #ffffff;
 }
 
-.nav__link[data-accordion=button] {
+.nav__submenu {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
   position: relative;
+  text-transform: uppercase;
   padding-right: 22px;
+  cursor: pointer;
 }
-.nav__link[data-accordion=button]::after {
+.nav__submenu::after {
   content: "";
   position: absolute;
   top: 5px;
@@ -3585,7 +3704,6 @@ button,
   -ms-grid-rows: auto 25px auto;
       grid-template-areas: "top socials" "bottom bottom";
   gap: 25px;
-  border-top: 1px solid red;
 }
 @media (max-width: 1319px) {
   .page-footer {
@@ -3793,7 +3911,7 @@ button,
     outline: none;
     color: #316dc2;
   }
-  .page-footer__list a:hover:not(.focus-visible).focus-visible:active {
+  .page-footer__list a:hover:not(.focus-visible):active {
     color: #275699;
   }
 }
@@ -3801,7 +3919,7 @@ button,
   outline: none;
   color: #316dc2;
 }
-.page-footer__list a.focus-visible:focus.focus-visible:active {
+.page-footer__list a.focus-visible:focus:active {
   color: #275699;
 }
 
@@ -3837,10 +3955,10 @@ button,
   .page-footer__privacy:hover:not(.focus-visible)::after {
     background-color: #316dc2;
   }
-  .page-footer__privacy:hover:not(.focus-visible).focus-visible:active {
+  .page-footer__privacy:hover:not(.focus-visible):active {
     color: #275699;
   }
-  .page-footer__privacy:hover:not(.focus-visible).focus-visible:active::after {
+  .page-footer__privacy:hover:not(.focus-visible):active::after {
     background-color: #275699;
   }
 }
@@ -3851,10 +3969,10 @@ button,
 .page-footer__privacy.focus-visible:focus::after {
   background-color: #316dc2;
 }
-.page-footer__privacy.focus-visible:focus.focus-visible:active {
+.page-footer__privacy.focus-visible:focus:active {
   color: #275699;
 }
-.page-footer__privacy.focus-visible:focus.focus-visible:active::after {
+.page-footer__privacy.focus-visible:focus:active::after {
   background-color: #275699;
 }
 
@@ -3883,7 +4001,7 @@ button,
     outline: none;
     color: rgba(255, 255, 255, 0.7);
   }
-  .social:hover:not(.focus-visible).focus-visible:active {
+  .social:hover:not(.focus-visible):active {
     color: #ffffff;
     background-color: #275699;
   }
@@ -3892,7 +4010,7 @@ button,
   outline: none;
   color: rgba(255, 255, 255, 0.7);
 }
-.social.focus-visible:focus.focus-visible:active {
+.social.focus-visible:focus:active {
   color: #ffffff;
   background-color: #275699;
 }
@@ -4085,10 +4203,9 @@ button,
 
 .about__item {
   padding: 30px 60px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: minmax(134px, 171px) minmax(164px, auto);
-  grid-template-columns: minmax(134px, 171px) minmax(164px, auto);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -4096,6 +4213,7 @@ button,
   border: 1px solid #f0efe9;
   position: relative;
   width: 478px;
+  gap: 20px;
 }
 .about__item p {
   padding: 0;
@@ -4124,6 +4242,8 @@ button,
 }
 @media (max-width: 1199px) {
   .about__item {
+    display: -ms-grid;
+    display: grid;
     padding: 30px;
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
@@ -4305,24 +4425,34 @@ button,
 }
 .programs-slide__name::after {
   content: "";
-  background-image: url("../img/svg/header-slide-angle.svg");
-  background-position: top;
-  background-size: 100%;
-  background-repeat: no-repeat;
+  position: absolute;
+  background: radial-gradient(circle at 100% 0, transparent 15px, #ffffff 16px);
   position: absolute;
   width: 18px;
   height: 18px;
-  bottom: 0;
-  right: -17px;
-  -webkit-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  bottom: -2px;
+  right: -16px;
+}
+@media (max-width: 1279px) {
+  .programs-slide__name {
+    font-size: 22px;
+    line-height: 24px;
+  }
 }
 @media (max-width: 1199px) {
   .programs-slide__name {
-    width: 60%;
+    width: 61.4%;
+    font-size: 20px;
+    line-height: 24px;
   }
 }
+@media (max-width: 767px) {
+  .programs-slide__name {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+
 .programs-slide__container {
   padding: 71.42% 20px 20px;
   width: 100%;
@@ -4368,8 +4498,15 @@ button,
   font-size: 14px;
   line-height: 18px;
 }
+@media (max-width: 1199px) {
+  .programs-slide__inner {
+    line-height: 20px;
+  }
+}
 @media (max-width: 767px) {
   .programs-slide__inner {
+    font-size: 12px;
+    line-height: 14px;
     width: 100%;
   }
 }
@@ -4403,14 +4540,14 @@ button,
   .swiper-button:hover:not(.focus-visible) {
     background-color: #ffffff;
   }
-  .swiper-button:hover:not(.focus-visible).focus-visible:active {
+  .swiper-button:hover:not(.focus-visible):active {
     color: rgba(49, 109, 194, 0.7);
   }
 }
 .swiper-button.focus-visible:focus {
   background-color: #ffffff;
 }
-.swiper-button.focus-visible:focus.focus-visible:active {
+.swiper-button.focus-visible:focus:active {
   color: rgba(49, 109, 194, 0.7);
 }
 .swiper-button:disabled {
@@ -4706,7 +4843,7 @@ button,
     outline: none;
     color: #316dc2;
   }
-  .news__tub:hover:not(.focus-visible).focus-visible:active {
+  .news__tub:hover:not(.focus-visible):active {
     color: #316dc2;
     border: 1px solid #316dc2;
   }
@@ -4715,7 +4852,7 @@ button,
   outline: none;
   color: #316dc2;
 }
-.news__tub.focus-visible:focus.focus-visible:active {
+.news__tub.focus-visible:focus:active {
   color: #316dc2;
   border: 1px solid #316dc2;
 }
@@ -4788,6 +4925,9 @@ button,
 @media (max-width: 1199px) {
   .news__wrapper {
     height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
@@ -4799,11 +4939,11 @@ button,
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  max-width: 286px;
+  max-width: 23.07%;
   display: none;
 }
 .news-slide[data-first-slide=true] {
-  min-width: 604px;
+  min-width: calc(46.1% + 32px);
 }
 .news-slide[data-first-slide=true] .news-slide__title {
   padding: 18px 18px 6px 0;
@@ -4825,6 +4965,7 @@ button,
 }
 @media (max-width: 767px) {
   .news-slide {
+    max-width: 100%;
     width: 100%;
     height: 42%;
   }
@@ -4847,8 +4988,8 @@ button,
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: top left;
-     object-position: top left;
+  -o-object-position: bottom;
+     object-position: bottom;
 }
 
 .news-slide__wrapper {
@@ -4888,7 +5029,7 @@ button,
 .news-slide__date::before, .news-slide__date::after {
   content: "";
   position: absolute;
-  background: radial-gradient(circle at 100% 0, transparent 16px, #f0efe9 14px);
+  background: radial-gradient(circle at 100% 0, transparent 15px, #f0efe9 16px);
   position: absolute;
   width: 16px;
   height: 16px;
@@ -4912,7 +5053,7 @@ button,
 .news-slide__title::after {
   content: "";
   position: absolute;
-  background: radial-gradient(circle at 100% 0, transparent 16px, #f0efe9 14px);
+  background: radial-gradient(circle at 100% 0, transparent 15px, #f0efe9 16px);
   position: absolute;
   width: 16px;
   height: 16px;
@@ -4934,10 +5075,21 @@ button,
   gap: 16px;
   position: relative;
 }
+.news-slide__inner::before {
+  content: "";
+  position: absolute;
+  background: radial-gradient(circle at 100% 0, transparent 15px, #f0efe9 16px);
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  bottom: 0;
+  right: -16px;
+  left: 0;
+}
 .news-slide__inner::after {
   content: "";
   position: absolute;
-  background: radial-gradient(circle at 100% 0, transparent 16px, #f0efe9 14px);
+  background: radial-gradient(circle at 100% 0, transparent 15px, #f0efe9 16px);
   position: absolute;
   width: 16px;
   height: 16px;
@@ -5023,14 +5175,14 @@ button,
   .faq__element:hover:not(.focus-visible) .faq__mark::before, .faq__element:hover:not(.focus-visible) .faq__mark::after {
     background-color: #316dc2;
   }
-  .faq__element:hover:not(.focus-visible).focus-visible:active .faq__button {
+  .faq__element:hover:not(.focus-visible):active .faq__button {
     color: #275699;
   }
-  .faq__element:hover:not(.focus-visible).focus-visible:active .faq__mark {
+  .faq__element:hover:not(.focus-visible):active .faq__mark {
     background-color: #275699;
     border-color: #275699;
   }
-  .faq__element:hover:not(.focus-visible).focus-visible:active .faq__mark::before, .faq__element:hover:not(.focus-visible).focus-visible:active .faq__mark::after {
+  .faq__element:hover:not(.focus-visible):active .faq__mark::before, .faq__element:hover:not(.focus-visible):active .faq__mark::after {
     background-color: #ffffff;
   }
 }
@@ -5043,14 +5195,14 @@ button,
 .faq__element.focus-visible:focus .faq__mark::before, .faq__element.focus-visible:focus .faq__mark::after {
   background-color: #316dc2;
 }
-.faq__element.focus-visible:focus.focus-visible:active .faq__button {
+.faq__element.focus-visible:focus:active .faq__button {
   color: #275699;
 }
-.faq__element.focus-visible:focus.focus-visible:active .faq__mark {
+.faq__element.focus-visible:focus:active .faq__mark {
   background-color: #275699;
   border-color: #275699;
 }
-.faq__element.focus-visible:focus.focus-visible:active .faq__mark::before, .faq__element.focus-visible:focus.focus-visible:active .faq__mark::after {
+.faq__element.focus-visible:focus:active .faq__mark::before, .faq__element.focus-visible:focus:active .faq__mark::after {
   background-color: #ffffff;
 }
 .faq__element.is-active {
@@ -5080,14 +5232,14 @@ button,
   .faq__element.is-active:hover:not(.focus-visible) .faq__mark::before {
     background-color: #ffffff;
   }
-  .faq__element.is-active:hover:not(.focus-visible).focus-visible:active {
+  .faq__element.is-active:hover:not(.focus-visible):active {
     background-color: #275699;
   }
-  .faq__element.is-active:hover:not(.focus-visible).focus-visible:active .faq__mark {
+  .faq__element.is-active:hover:not(.focus-visible):active .faq__mark {
     background-color: #ffffff;
     border: 1px solid #316dc2;
   }
-  .faq__element.is-active:hover:not(.focus-visible).focus-visible:active .faq__mark::before {
+  .faq__element.is-active:hover:not(.focus-visible):active .faq__mark::before {
     background-color: #316dc2;
   }
 }
@@ -5101,14 +5253,14 @@ button,
 .faq__element.is-active.focus-visible:focus .faq__mark::before {
   background-color: #ffffff;
 }
-.faq__element.is-active.focus-visible:focus.focus-visible:active {
+.faq__element.is-active.focus-visible:focus:active {
   background-color: #275699;
 }
-.faq__element.is-active.focus-visible:focus.focus-visible:active .faq__mark {
+.faq__element.is-active.focus-visible:focus:active .faq__mark {
   background-color: #ffffff;
   border: 1px solid #316dc2;
 }
-.faq__element.is-active.focus-visible:focus.focus-visible:active .faq__mark::before {
+.faq__element.is-active.focus-visible:focus:active .faq__mark::before {
   background-color: #316dc2;
 }
 @media (max-width: 1199px) {

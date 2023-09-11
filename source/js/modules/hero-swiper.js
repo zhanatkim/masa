@@ -9,10 +9,10 @@ export const heroSwiper = new Swiper('.page-header__swiper', {
     el: '.page-header-swiper__pagination',
     clickable: true,
   },
-  // autoplay: {
-  //   delay: 3000,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
 });
 heroSwiper.on('afterInit', renderSlide());
 heroSwiper.on('slideChangeTransitionEnd', renderSlide);

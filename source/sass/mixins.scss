@@ -1,8 +1,7 @@
 @mixin beige-angle {
   content: "";
   position: absolute;
-  background: radial-gradient(circle at 100% 0, transparent 16px, $color-default-beige 14px);
-
+  background: $beige-angle-grd;
   // background-image: url("../img/svg/news-angle-beige.svg");
   // background-position: top;
   // background-size: contain;
@@ -12,6 +11,21 @@
   height: 16px;
   bottom: 0;
   right: -16px;
+}
+
+@mixin white-angle {
+  content: "";
+  position: absolute;
+  background: $white-angle-grd;
+  // background-image: url("../img/svg/news-angle-beige.svg");
+  // background-position: top;
+  // background-size: contain;
+  // background-repeat: no-repeat;
+  position: absolute;
+  // width: 16px;
+  // height: 16px;
+  // bottom: 0;
+  // right: -16px;
 }
 
 @mixin retina {
@@ -35,7 +49,7 @@
 }
 
 @mixin active {
-  &.focus-visible:active {
+  &:active {
     @content;
   }
 }

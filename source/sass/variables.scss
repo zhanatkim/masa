@@ -26,6 +26,10 @@ $color-torch-red:                   #ff1553;
 
 $black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
 
+$white-angle-grd:                   radial-gradient(circle at 100% 0, transparent 15px, $color-default-white 16px);
+$beige-angle-grd:                   radial-gradient(circle at 100% 0, transparent 15px, $color-default-beige 16px);
+
+
 // Typography
 // ---------------------------------
 

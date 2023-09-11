@@ -4,11 +4,13 @@
   border-radius: 12px;
   overflow: hidden;
   justify-content: flex-end;
-  max-width: 286px;
+  max-width: 23.07%;
+  // max-width: 286px;
   display: none;
 
   &[data-first-slide = true] {
-    min-width: 604px;
+    // min-width: 604px;
+    min-width: calc(46.1% + 32px);
 
     & .news-slide__title {
       padding: 18px 18px 6px 0;
@@ -34,6 +36,7 @@
   }
 
   @include vp-767 {
+    max-width: 100%;
     width: 100%;
     height: 42%;
 
@@ -56,7 +59,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top left;
+    object-position: bottom;
   }
 }
 
@@ -118,6 +121,11 @@
   justify-content: space-between;
   gap: 16px;
   position: relative;
+
+  &::before {
+    @include beige-angle;
+    left: 0;
+  }
 
   &::after {
     @include beige-angle;

@@ -15,20 +15,7 @@
   width: fit-content;
   gap: 30px;
   transition: background-color $trans-default;
-
-  @include hover-focus {
-    background-color: $color-default-blue;
-    color: $color-default-white;
-
-    & .button__mark {
-      background-color: $color-default-white;
-      color: $color-default-blue;
-
-      & svg {
-        transform: rotate(45deg);
-      }
-    }
-  }
+  cursor: pointer;
 
   & .button__mark {
     border-radius: 50%;
@@ -43,6 +30,30 @@
     @include vp-767 {
       width: 34px;
       height: 34px;
+    }
+  }
+
+  @include hover-focus {
+    background-color: $color-default-blue;
+    color: $color-default-white;
+
+    .button__mark {
+      background-color: $color-default-white;
+      color: $color-default-blue;
+
+      & svg {
+        transform: rotate(45deg);
+      }
+    }
+
+    @include active {
+      background-color: $color-default-blue;
+      color: rgba($color-default-white, 0.7);
+
+      .button__mark {
+        background-color: $color-default-white;
+        color: rgba($color-default-blue, 0.7);
+      }
     }
   }
 
@@ -64,6 +75,27 @@
       width: 30px;
       height: 30px;
     }
+
+    @include hover-focus {
+      background-color: transparent;
+      .button__mark {
+        background-color: $color-default-white;
+        color: $color-default-blue;
+
+        & svg {
+          transform: rotate(45deg);
+        }
+      }
+
+      @include active {
+        color: rgba($color-default-white, 0.7);
+
+        .button__mark {
+          background-color: $color-default-white;
+          color: rgba($color-default-blue, 0.7);
+        }
+      }
+    }
   }
 
   &--form {
@@ -73,6 +105,41 @@
     & .button__mark {
       background-color: $color-default-white;
       color: $color-default-blue;
+    }
+
+    @include hover-focus {
+      background-color: $color-default-white;
+      color: $color-default-blue;
+
+      .button__mark {
+        background-color: $color-default-blue;
+        color: $color-default-white;
+
+        & svg {
+          transform: rotate(45deg);
+        }
+      }
+
+      @include active {
+        background-color: $color-default-white;
+        color: rgba($color-default-blue, 0.7);
+
+        .button__mark {
+          background-color: $color-default-blue;
+          color: rgba($color-default-white, 0.7);
+        }
+      }
+    }
+  }
+
+  &:disabled {
+    border-color: $color-disable-gray;
+    color: $color-disable-gray;
+    background-color: transparent;
+
+    .button__mark {
+      background-color: $color-disable-gray;
+      color: $color-default-white;
     }
   }
 }

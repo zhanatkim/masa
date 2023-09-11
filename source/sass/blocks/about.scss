@@ -166,16 +166,16 @@
 
 .about__item {
   padding: 30px 60px;
-  // display: flex;
-  // justify-content: space-between;
-  display: grid;
-  // grid-template-columns: minmax(134px, 171px) 1fr;
-  grid-template-columns: minmax(134px, 171px) minmax(164px, auto);
+  display: flex;
   justify-content: space-between;
+  // display: grid;
+  // grid-template-columns: minmax(134px, 171px) 1fr;
+  // grid-template-columns: minmax(134px, 171px) minmax(164px, auto);
   border-radius: 16px;
   border: 1px solid $color-default-beige;
   position: relative;
   width: 478px;
+  gap: 20px;
 
   & p {
     padding: 0;
@@ -202,6 +202,7 @@
   }
 
   @include vp-1199 {
+    display: grid;
     padding: 30px;
     grid-template-columns: 1fr;
     width: 100%;
