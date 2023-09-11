@@ -9,10 +9,9 @@ const renderBullets = (index, className) => '<span class="' + className + '">' +
 
 const newsSwiper = new Swiper('.news__swiper', {
   cssMode: true,
-  freeMode: true,
   slidesPerView: 1,
+  // slidesPerColumn: 2,
   grid: {
-    fill: 'row',
     rows: 2,
   },
   spaceBetween: 20,
@@ -20,14 +19,18 @@ const newsSwiper = new Swiper('.news__swiper', {
     768: {
       slidesPerView: 2,
       spaceBetween: 30,
+      // slidesPerColumn: 2,
       grid: {
-        fill: 'row',
         rows: 2,
       },
     },
     1200: {
       slidesPerView: 3,
       spaceBetween: 32,
+      // slidesPerCsolumn: 1,
+      grid: {
+        rows: 1,
+      },
     },
   },
   pagination: {
@@ -43,6 +46,9 @@ const newsSwiper = new Swiper('.news__swiper', {
 
 const setWideFirstSlide = () => {
   const firstSlide = Array.from(slidesWrapper.querySelectorAll('.news-slide--is-open'))[0];
+  if (!firstSlide) {
+    return;
+  }
   if (!breakpoint.matches) {
     delete firstSlide.dataset.firstSlide;
     return;
@@ -85,3 +91,4 @@ buttonsWrapper.addEventListener('click', filterSlides);
 newsSwiper.on('afterInit', setWideFirstSlide());
 newsSwiper.on('update', setWideFirstSlide);
 breakpoint.addListener(setWideFirstSlide);
+// newsSwiper.updateSize();

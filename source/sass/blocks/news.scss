@@ -137,8 +137,11 @@
 
   @include vp-1199 {
     height: 100%;
-    display: flex;
+    // max-width: 100%;
     // display: grid;
-    // grid-template-columns: 50% 50%;
+    // grid-template-columns: 1fr 1fr;
+    // grid-template-rows: auto auto;
+    // // grid-auto-flow: column;
+    // gap: 30px;
   }
 }
