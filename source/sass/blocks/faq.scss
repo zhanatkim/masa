@@ -43,11 +43,12 @@
 }
 
 .faq__element {
-  padding: 39px;
+  padding: 34px 39px 30px;
   border-radius: 14px;
   border: 1px solid $color-default-blue;
   color: $color-default-blue;
   transition: background-color $trans-default;
+  min-height: 120px;
 
   @include hover-focus {
     background-color: $color-default-white;
@@ -80,6 +81,7 @@
   &.is-active {
     background-color: $color-default-blue;
     color: $color-default-white;
+    padding-bottom: 38px;
 
     & .faq__button {
       color: $color-default-white;
@@ -142,36 +144,31 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 28px;
-  line-height: 34px;
   cursor: pointer;
   transition: background-color $trans-default;
 
   & span:not(.faq__mark) {
+    font-size: 28px;
+    line-height: 34px;
     max-width: 73%;
     text-align: start;
 
     @include vp-1199 {
+      font-size: 22px;
+      line-height: 26px;
       max-width: 66%;
     }
 
     @include vp-767 {
+      font-size: 16px;
+      line-height: 18px;
       max-width: 72%;
     }
-  }
-
-  @include vp-1199 {
-    font-size: 22px;
-    line-height: 26px;
-  }
-
-  @include vp-767 {
-    font-size: 16px;
-    line-height: 18px;
   }
 }
 
 .faq__mark {
+  margin-top: 5px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -179,6 +176,7 @@
   background-color: $color-default-blue;
   position: relative;
   transition: background-color $trans-default;
+  align-self: flex-start;
 
   &::before,
   &::after {

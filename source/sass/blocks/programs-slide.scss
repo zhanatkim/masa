@@ -37,6 +37,7 @@
   @include vp-1279 {
     font-size: 22px;
     line-height: 24px;
+    padding-bottom: 3px;
   }
 
   @include vp-1199 {
@@ -79,16 +80,18 @@
   border-radius: 0px 12px 12px 12px;
   background-color: $color-default-white;
   gap: 16px;
+  font-size: 14px;
+  line-height: 18px;
 
   & p {
     margin: 0;
     padding: 0;
-    font-size: 14px;
-    line-height: 18px;
   }
 
   @include vp-1199 {
     line-height: 20px;
+    width: 93%;
+    padding: 4px 18px 8px;
   }
 
   @include vp-767 {
@@ -115,5 +118,15 @@
     height: 100%;
     object-fit: cover;
     object-position: top left;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $color-overlay-light;
   }
 }

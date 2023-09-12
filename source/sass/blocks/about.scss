@@ -24,7 +24,7 @@
 
   @include vp-1199 {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 28px;
   }
 
   @include vp-767 {
@@ -75,8 +75,9 @@
     }
 
     &--right {
+      padding-left: 0;
       width: 73.45%;;
-      gap: 30px;
+      gap: 24px;
 
       & p {
         line-height: 20px;
@@ -110,7 +111,7 @@
   padding: 4px 0;
 
   @include vp-1199 {
-    padding: 13px 0;
+    padding: 0;
   }
 
   @include vp-767 {
@@ -128,19 +129,13 @@
 
 .about__bottom {
   width: 100%;
-  // padding: 70px calc(50% - 514px);
   padding: 92px 105px 56px 127px;
   background-color: $color-default-blue;
   color: $color-default-white;
   border-radius: 20px;
 
-  // @include vp-1319 {
-  //   padding-left: 40px;
-  //   padding-right: 40px;
-  // }
-
   @include vp-1199 {
-    padding: 40px;
+    padding: 62px 40px 40px 60px;
   }
 
   @include vp-767 {
@@ -207,10 +202,10 @@
 
   @include vp-1199 {
     display: grid;
-    padding: 30px;
+    padding: 30px 30px 24px;
     grid-template-columns: 1fr;
     width: 100%;
-    gap: 12px;
+    gap: 8px;
   }
 
   @include vp-767 {

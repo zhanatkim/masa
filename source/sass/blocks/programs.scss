@@ -77,6 +77,11 @@
   height: auto;
   padding-bottom: 60px;
 
+  @include vp-1199 {
+    padding-top: 40px;
+    padding-bottom: 62px;
+  }
+
   @include vp-767 {
     padding-bottom: 30px;
   }
