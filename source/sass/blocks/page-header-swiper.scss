@@ -1,7 +1,7 @@
 .page-header-swiper {
   width: 100%;
-  margin-top: 27%;
-  margin-bottom: 22px;
+  margin-top: 26.4%;
+  margin-bottom: 60px;
 
   & > .page-header-swiper__pagination {
     top: 10px;
@@ -34,7 +34,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  width: 79%;
+  width: 78.1%;
   height: 100%;
 
   @include vp-1199 {
@@ -48,7 +48,7 @@
 
 .page-header-swiper__text {
   margin-top: -6px;
-  padding: 0 50px 30px;
+  padding: 0 50px 25px;
   background-color: $color-default-white;
   border-radius: 0 0 30px 28px;
   width: 79.75%;

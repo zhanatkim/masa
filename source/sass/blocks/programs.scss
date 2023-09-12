@@ -18,6 +18,14 @@
   }
 }
 
+.programs__title {
+  padding-top: 4px;
+
+  @include vp-1199 {
+    padding: 0;
+  }
+}
+
 .programs__button {
   @include vp-1199 {
     margin-right: 45px;
@@ -65,9 +73,9 @@
 }
 
 .programs__wrapper {
-  padding-top: 40px;
+  padding-top: 45px;
   height: auto;
-  padding-bottom: 62px;
+  padding-bottom: 60px;
 
   @include vp-767 {
     padding-bottom: 30px;

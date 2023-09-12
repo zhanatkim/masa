@@ -43,8 +43,9 @@
   }
 
   &--left {
-    gap: 30px;
-    width: 477px;
+    gap: 25px;
+    max-width: 477px;
+    width: 100%;
 
     & p {
       font-size: 22px;
@@ -53,8 +54,10 @@
   }
 
   &--right {
-    gap: 40px;
-    width: 498px;
+    padding-left: 16px;
+    gap: 32px;
+    max-width: 510px;
+    width: 100%;
 
     & p {
       font-size: 16px;
@@ -104,7 +107,7 @@
 }
 
 .about__title {
-  padding: 11px 0 13px;
+  padding: 4px 0;
 
   @include vp-1199 {
     padding: 13px 0;
@@ -116,16 +119,17 @@
 }
 
 .about__subtitle {
-  padding: 5px 0 6px;
+  padding: 0;
 
-  @include vp-1199 {
-    padding: 0;
-  }
+  // @include vp-1199 {
+  //   padding: 0;
+  // }
 }
 
 .about__bottom {
   width: 100%;
-  padding: 70px calc(50% - 514px);
+  // padding: 70px calc(50% - 514px);
+  padding: 92px 105px 56px 127px;
   background-color: $color-default-blue;
   color: $color-default-white;
   border-radius: 20px;
@@ -165,7 +169,7 @@
 }
 
 .about__item {
-  padding: 30px 60px;
+  padding: 30px 60px 28px;
   display: flex;
   justify-content: space-between;
   // display: grid;

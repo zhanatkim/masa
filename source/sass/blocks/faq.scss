@@ -23,7 +23,7 @@
 }
 
 .faq__title {
-  padding: 11px 9px 13px;
+  padding: 5px 0;
   text-align: center;
 
   @include vp-1199 {
@@ -43,7 +43,7 @@
 }
 
 .faq__element {
-  padding: 40px;
+  padding: 39px;
   border-radius: 14px;
   border: 1px solid $color-default-blue;
   color: $color-default-blue;
@@ -148,7 +148,7 @@
   transition: background-color $trans-default;
 
   & span:not(.faq__mark) {
-    max-width: 63%;
+    max-width: 73%;
     text-align: start;
 
     @include vp-1199 {
@@ -205,10 +205,11 @@
 .faq__text p {
   margin: 0;
   padding: 0;
-  padding-top: 30px;
+  padding-top: 12px;
+  margin-bottom: -5px;
   font-size: 16px;
   line-height: 26px;
-  max-width: 63%;
+  max-width: 73%;
   color: $color-default-beige;
 
   @include vp-1199 {
