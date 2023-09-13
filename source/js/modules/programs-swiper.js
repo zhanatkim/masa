@@ -21,8 +21,8 @@ export const programsSwiper = new Swiper('.programs__swiper', {
     type: 'progressbar',
   },
   navigation: {
-    nextEl: '.programs__button--next',
-    prevEl: '.programs__button--prev',
+    nextEl: '.programs__swiper-button--next',
+    prevEl: '.programs__swiper-button--prev',
   },
   keyboard: true,
 });

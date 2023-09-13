@@ -1,4 +1,5 @@
 .news {
+  width: 100%;
   height: 100%;
   padding: 120px calc(50% - 620px);
   display: grid;
@@ -28,7 +29,7 @@
   padding: 4px 0;
 
   @include vp-1199 {
-    padding: 13px 0;
+    padding: 0;
   }
 
   @include vp-767 {
@@ -39,15 +40,21 @@
 .news__tubs {
   margin: 0 auto;
   display: flex;
-  width: fit-content;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   gap: 30px;
 
   @include vp-1199 {
+    padding: 0 4px;
+    gap: 5px;
   }
 
   @include vp-767 {
+    flex-wrap: nowrap;
+    overflow: scroll;
+
   }
 }
 
@@ -62,6 +69,7 @@
   color: rgba($color-default-blue, 0.6);
   text-transform: uppercase;
   font-size: 14px;
+  line-height: 100%;
   font-weight: 500;
   letter-spacing: 0.02em;
   cursor: pointer;
@@ -82,6 +90,7 @@
   }
 
   @include vp-1199 {
+    padding: 11px 19px;
   }
 
   @include vp-767 {
@@ -93,8 +102,6 @@
   width: 100%;
   height: 100%;
   position: relative;
-  display: flex;
-  align-items: center;
   padding-bottom: 72px;
 
   & .news__pagination {
@@ -128,20 +135,181 @@
     right: auto;
     left: 0;
   }
+
+  @include vp-1199 {
+    padding-bottom: 63px;
+  }
 }
 
 .news__wrapper {
-  max-width: 100%;
-  width: 100%;
   height: auto;
 
   @include vp-1199 {
-    height: 100%;
-    // max-width: 100%;
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
-    // grid-template-rows: auto auto;
-    // // grid-auto-flow: column;
-    // gap: 30px;
+    height: unset;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-auto-flow: column;
+    gap: 30px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 330fr 240fr;
+    gap: 0;
   }
 }
+
+
+
+// .news {
+//   height: 100%;
+//   padding: 120px calc(50% - 620px);
+//   display: grid;
+//   grid-template-columns: 1fr;
+//   gap: 40px;
+//   background-color: $color-default-beige;
+
+//   @include vp-1319 {
+//     padding-left: 40px;
+//     padding-right: 40px;
+//   }
+
+//   @include vp-1199 {
+//     padding: 100px 45px;
+//     grid-template-columns: 1fr;
+//     gap: 30px;
+//   }
+
+//   @include vp-767 {
+//     padding: 67px 15px;
+//     gap: 30px;
+//   }
+// }
+
+// .news__title {
+//   text-align: center;
+//   padding: 4px 0;
+
+//   @include vp-1199 {
+//     padding: 13px 0;
+//   }
+
+//   @include vp-767 {
+//     padding: 5px 0 6px;
+//   }
+// }
+
+// .news__tubs {
+//   margin: 0 auto;
+//   display: flex;
+//   width: fit-content;
+//   justify-content: space-between;
+//   align-items: center;
+//   gap: 30px;
+
+//   @include vp-1199 {
+//   }
+
+//   @include vp-767 {
+//   }
+// }
+
+// .news__tub {
+//   padding: 10px 26px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   border-radius: 20px;
+//   border: none;
+//   background-color: transparent;
+//   color: rgba($color-default-blue, 0.6);
+//   text-transform: uppercase;
+//   font-size: 14px;
+//   font-weight: 500;
+//   letter-spacing: 0.02em;
+//   cursor: pointer;
+
+//   @include hover-focus {
+//     outline: none;
+//     color: $color-default-blue;
+
+//     @include active {
+//       color: $color-default-blue;
+//       border: 1px solid $color-default-blue;
+//     }
+//   }
+
+//   &--is-active {
+//     color: $color-default-blue;
+//     border: 1px solid $color-default-blue;
+//   }
+
+//   @include vp-1199 {
+//   }
+
+//   @include vp-767 {
+//     font-size: 12px;
+//   }
+// }
+
+// .news__swiper {
+//   width: 100%;
+//   position: relative;
+//   padding-bottom: 72px;
+
+//   & .news__pagination {
+//     margin: 0 auto;
+//     display: flex;
+//     justify-content: center;
+//     gap: 12px;
+//     bottom: 0;
+
+//     & .swiper-pagination-bullet {
+//       width: 32px;
+//       height: 32px;
+//       font-size: 16px;
+//       opacity: 0.5;
+//       color: $color-default-blue;
+//       background: transparent;
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+
+//       &-active {
+//         background-color: $color-default-blue;
+//         border-radius: 50%;
+//         color: $color-default-white;
+//         opacity: 1;
+//       }
+//     }
+//   }
+
+//   & .news__button--prev {
+//     right: auto;
+//     left: 0;
+//   }
+
+//   // @include vp-1199 {
+//   //   width: 100%;
+//   //   height: auto;
+//   //   margin-left: auto;
+//   //   margin-right: auto;
+//   // }
+// }
+
+// // .news__wrapper {
+// //   // max-width: 100%;
+// //   width: 100%;
+// //   height: auto;
+
+// //   @include vp-1199 {
+// //     height: 100%;
+// //     // max-width: 100%;
+// //     // display: grid;
+// //     // grid-template-columns: 1fr 1fr;
+// //     // grid-template-rows: auto auto;
+// //     // // grid-auto-flow: column;
+// //     // gap: 30px;
+// //   }
+// // }

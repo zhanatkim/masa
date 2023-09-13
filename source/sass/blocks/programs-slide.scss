@@ -49,6 +49,9 @@
   @include vp-767 {
     font-size: 16px;
     line-height: 18px;
+    width: 54%;
+    padding-bottom: 7px;
+    padding-top: 18px;
   }
 }
 
@@ -92,17 +95,18 @@
     line-height: 20px;
     width: 93%;
     padding: 4px 18px 8px;
+    min-height: 77px;
   }
 
   @include vp-767 {
+    padding-top: 13px;
+    padding-bottom: 14px;
     font-size: 12px;
     line-height: 14px;
     width: 100%;
+    min-height: unset;
   }
 
-  @include vp-1199 {
-    min-height: 77px;
-  }
 }
 
 .programs-slide__photo {

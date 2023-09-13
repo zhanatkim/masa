@@ -36,7 +36,7 @@
   }
 
   @include vp-767 {
-    padding: 5px 0 6px;
+    padding: 2px 0 6px;
   }
 }
 
@@ -61,7 +61,7 @@
   }
 
   @include vp-767 {
-    gap: 15px;
+    gap: 8px;
   }
 
   & p {
@@ -132,9 +132,9 @@
     background-color: $color-default-blue;
 
     @include vp-767 {
-      top: -5px;
-      left: -15px;
-      width: 32px;
+      top: -6px;
+      left: -13px;
+      width: 26px;
       height: 32px;
       font-size: 18px;
     }
@@ -147,7 +147,7 @@
 
   @include vp-767 {
     margin-left: 15px;
-    padding: 24px 25px;
+    padding: 18px 24px;
     font-size: 14px;
   }
 }
@@ -165,5 +165,9 @@
 
   @include vp-1199 {
     height: 375px;
+  }
+
+  @include vp-767 {
+    height: 200px;
   }
 }
