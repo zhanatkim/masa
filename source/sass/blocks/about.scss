@@ -159,9 +159,9 @@
 }
 
 .about__item {
-  padding: 30px 60px 28px;
+  padding: 30px 50px 28px 57px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   border-radius: 16px;
   border: 1px solid $color-default-beige;
   position: relative;
@@ -229,12 +229,14 @@
   font-weight: 300;
   line-height: 20px;
   width: fit-content;
-  justify-self: right;
+  max-width: 190px;
+  justify-self: left;
 
   @include vp-1199 {
+    max-width: unset;
     font-size: 16px;
     line-height: 20px;
-    justify-self: left;
+    // justify-self: left;
   }
 
   @include vp-767 {

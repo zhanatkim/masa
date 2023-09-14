@@ -5,6 +5,8 @@ import {renderSlide} from './render-slide';
 export const heroSwiper = new Swiper('.page-header__swiper', {
   cssmode: true,
   loop: true,
+  spaceBetween: 20,
+  slidesPerView: 1,
   pagination: {
     el: '.page-header-swiper__pagination',
     clickable: true,

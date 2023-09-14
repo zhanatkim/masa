@@ -4227,13 +4227,13 @@ button,
 }
 
 .about__item {
-  padding: 30px 60px 28px;
+  padding: 30px 50px 28px 57px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border-radius: 16px;
   border: 1px solid #f0efe9;
   position: relative;
@@ -4311,15 +4311,15 @@ button,
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -ms-grid-column-align: right;
-      justify-self: right;
+  max-width: 190px;
+  -ms-grid-column-align: left;
+      justify-self: left;
 }
 @media (max-width: 1199px) {
   .about__value {
+    max-width: unset;
     font-size: 16px;
     line-height: 20px;
-    -ms-grid-column-align: left;
-        justify-self: left;
   }
 }
 @media (max-width: 767px) {
