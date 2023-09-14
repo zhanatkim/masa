@@ -19,7 +19,7 @@
   margin: 0;
   padding: 14px 18px 4px;
   width: 55%;
-  border-radius: 12px 12px 0px 0px;
+  border-radius: 12px 12px 0 0;
   background-color: $color-default-white;
   color: $color-default-blue;
   font-size: 24px;
@@ -80,7 +80,7 @@
   min-height: 80px;
   display: flex;
   align-items: center;
-  border-radius: 0px 12px 12px 12px;
+  border-radius: 0 12px 12px 12px;
   background-color: $color-default-white;
   gap: 16px;
   font-size: 14px;
@@ -106,7 +106,6 @@
     width: 100%;
     min-height: unset;
   }
-
 }
 
 .programs-slide__photo {

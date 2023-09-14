@@ -18,20 +18,16 @@
 
   @include vp-767 {
     padding: 0 15px;
-    gap: 30px;
+    gap: 33px;
   }
 }
 
 .faq__title {
-  padding: 5px 0;
+  padding: 5px 0 6px;
   text-align: center;
 
   @include vp-1199 {
     padding: 0;
-  }
-
-  @include vp-767 {
-    padding: 5px 0 6px;
   }
 }
 
@@ -49,6 +45,9 @@
   color: $color-default-blue;
   transition: background-color $trans-default;
   min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   @include hover-focus {
     background-color: $color-default-white;
@@ -61,6 +60,7 @@
         background-color: $color-default-blue;
       }
     }
+
     @include active {
       .faq__button {
         color: $color-active-navy;
@@ -87,11 +87,14 @@
       color: $color-default-white;
 
       @include vp-1199 {
+        padding-top: 5px;
         padding-bottom: 5px;
-       }
-     
-       @include vp-767 {
-       }
+      }
+
+      @include vp-767 {
+        padding-top: 2px;
+        padding-bottom: 14px;
+      }
     }
 
     & .faq__mark {
@@ -117,6 +120,7 @@
           background-color: $color-default-white;
         }
       }
+
       @include active {
         background-color: $color-active-navy;
 
@@ -132,20 +136,22 @@
     }
 
     @include vp-1199 {
-      padding-bottom: 30px;
-     }
-   
-     @include vp-767 {
-     }
+      padding-bottom: 26px;
+    }
+
+    @include vp-767 {
+      padding-bottom: 14px;
+    }
   }
 
   @include vp-1199 {
-   padding: 25px 29px 23px;
-   min-height: 100px;
+    padding: 25px 29px 23px;
+    min-height: 100px;
   }
 
   @include vp-767 {
-    padding: 20px 15px;
+    padding: 18px 15px 19px;
+    min-height: 80px;
   }
 }
 
@@ -177,16 +183,8 @@
     @include vp-767 {
       font-size: 16px;
       line-height: 18px;
-      max-width: 72%;
+      max-width: 82%;
     }
-  }
-
-  @include vp-1199 {
-
-  }
-
-  @include vp-767 {
-
   }
 }
 
@@ -212,18 +210,22 @@
     width: 18px;
     height: 1px;
     top: calc(50% + 0.5px);
-    left: 11px
+    left: 11px;
   }
 
   &::after {
     width: 1px;
     height: 18px;
     left: calc(50% - 0.5px);
-    top: 11px
+    top: 11px;
   }
 
   @include vp-1199 {
     margin: 0;
+  }
+
+  @include vp-767 {
+    align-self: center;
   }
 }
 
@@ -238,13 +240,14 @@
   color: $color-default-beige;
 
   @include vp-1199 {
-    padding-top: 16px;
+    padding-top: 10px;
     margin-bottom: 0;
     line-height: 20px;
     max-width: 90%;
   }
 
   @include vp-767 {
+    padding-top: 0;
     font-size: 14px;
     max-width: 100%;
   }

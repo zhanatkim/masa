@@ -2,11 +2,6 @@
   content: "";
   position: absolute;
   background: $beige-angle-grd;
-  // background-image: url("../img/svg/news-angle-beige.svg");
-  // background-position: top;
-  // background-size: contain;
-  // background-repeat: no-repeat;
-  position: absolute;
   width: 16px;
   height: 16px;
   bottom: 0;
@@ -17,15 +12,6 @@
   content: "";
   position: absolute;
   background: $white-angle-grd;
-  // background-image: url("../img/svg/news-angle-beige.svg");
-  // background-position: top;
-  // background-size: contain;
-  // background-repeat: no-repeat;
-  position: absolute;
-  // width: 16px;
-  // height: 16px;
-  // bottom: 0;
-  // right: -16px;
 }
 
 @mixin retina {

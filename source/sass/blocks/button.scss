@@ -79,6 +79,7 @@
 
     @include hover-focus {
       background-color: transparent;
+
       .button__mark {
         background-color: $color-default-white;
         color: $color-default-blue;

@@ -57,9 +57,6 @@
   grid-template-columns: 1fr;
   gap: 24px;
 
-  @include vp-1199 {
-  }
-
   @include vp-767 {
     gap: 8px;
   }
@@ -117,7 +114,7 @@
   border: 1px solid $color-default-beige;
   line-height: 26px;
 
-  &:before {
+  &::before {
     content: counter(item);
     position: absolute;
     top: -15px;

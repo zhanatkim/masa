@@ -4,12 +4,6 @@ import L from 'leaflet';
 
 const map = L.map('map').setView([59.9682871, 30.3176164], 13);
 
-// const roadMutant = L.gridLayer.googleMutant({
-//   maxZoom: 24,
-//   type: 'roadmap',
-// });
-
-// roadMutant.addTo(map);
 const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'});

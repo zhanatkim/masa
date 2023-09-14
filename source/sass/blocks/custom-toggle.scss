@@ -20,6 +20,7 @@
 
     .custom-toggle__label {
       font-size: 12px;
+      line-height: 14px;
       opacity: 0.9;
       margin-bottom: 0;
       margin-left: 0;
@@ -42,9 +43,13 @@
       & svg {
         display: none;
       }
+
+      @include vp-767 {
+        align-self: center;
+      }
     }
 
-    input:checked + .custom-toggle__icon  {
+    input:checked + .custom-toggle__icon {
       background-color: $color-default-blue;
       border: 1px solid $color-default-blue;
 
@@ -85,13 +90,13 @@
     }
 
     @include hover-focus {
-       & input + .custom-toggle__icon {
+      & input + .custom-toggle__icon {
         outline: none;
         border: 1px solid $color-default-white;
       }
     }
 
-    input:checked + .custom-toggle__icon  {
+    input:checked + .custom-toggle__icon {
       background-color: $color-default-white;
       border: 1px solid $color-default-white;
 
@@ -117,5 +122,9 @@
     background-color: $color-disable-gray;
     border: 1px solid $color-disable-gray;
     color: $color-default-white;
+  }
+
+  @include vp-767 {
+    padding-top: 0;
   }
 }
