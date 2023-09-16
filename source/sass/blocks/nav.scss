@@ -1,33 +1,35 @@
 .nav {
-  display: none;
   padding: 0;
   margin: 0;
+  align-self: flex-end;
+  background-color: transparent;
+  transition: background-color $trans-modal;
 
-  &--is-active {
-    display: flex;
+  &.is-active {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 0;
     z-index: 2;
 
     & .nav__list {
-      position: fixed;
-      right: calc(50% - 610px);
-      top: 88px;
-      width: 286px;
+      max-height: 100%;
+      padding: 33px 25px;
+      list-style: none;
+      justify-self: flex-end;
+      gap: 24px;
+      background-color: $color-default-blue;
+      border-radius: 16px;
 
-      @include vp-1199 {
-        right: 65px;
-      }
-
-      @include vp-767 {
-        right: 16px;
-        width: 290px;
+      .nav__item {
+        height: 100%;
+        visibility: visible;
+        opacity: 1;
       }
     }
   }
@@ -44,27 +46,55 @@
 }
 
 .nav__list {
-  padding: 35px 25px;
-  list-style: none;
-  justify-self: flex-end;
-  gap: 28px;
-  background-color: $color-default-blue;
-  border-radius: 16px;
+  width: 286px;
+  max-height: 0;
+  position: absolute;
+  right: calc(50% - 620px);
+  top: 88px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  transition: max-height $trans-600;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   & > .nav__item > .nav__link {
     text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  @include vp-1199 {
+    right: 45px;
+  }
+
+  @include vp-767 {
+    top: 78px;
+    right: 15px;
+    width: calc(100% - 30px);
   }
 }
 
+.nav__item {
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  max-height: inherit;
+  transition: height $trans-600;
+}
+
+
 .nav__sublist {
   padding-left: 16px;
-  padding-top: 20px;
-  gap: 16px;
+  padding-top: 15px;
+  gap: 12px;
 }
 
 .nav__link,
 .nav__submenu {
   color: $color-default-white;
+  height: inherit;
+  transition: height $trans-600;
 }
 
 .nav__submenu {
@@ -74,13 +104,15 @@
   background-color: transparent;
   position: relative;
   text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 100%;
   padding-right: 22px;
   cursor: pointer;
 
   &::after {
     content: "";
     position: absolute;
-    top: 5px;
+    top: 3px;
     right: 0;
     width: 12px;
     height: 12px;
@@ -93,7 +125,7 @@
 }
 
 .nav__item.is-active {
-  & > .nav__link {
+  & > .nav__submenu {
     font-weight: 500;
 
     &::after {

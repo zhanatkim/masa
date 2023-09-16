@@ -17,3 +17,4 @@ const customIcon = L.icon({
 });
 
 L.marker([59.9682871, 30.3176164], {icon: customIcon}).addTo(map);
+map.scrollWheelZoom.disable();

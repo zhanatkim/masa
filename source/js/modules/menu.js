@@ -17,9 +17,9 @@ const onNaVLinkCloseMenu = (evt) => {
 };
 
 function closeMenu() {
-  menuList.classList.remove('nav--is-active');
-  header.classList.remove('page-header--is-active');
-  menuToggle.classList.remove('page-header__toggle--is-active');
+  menuList.classList.remove('is-active');
+  header.classList.remove('is-active');
+  menuToggle.classList.remove('is-active');
   window.scrollLock.enableScrolling();
   menuList.removeEventListener('click', onNaVLinkCloseMenu);
   menuList.removeEventListener('click', onNavOutsideClick);
@@ -30,9 +30,9 @@ const openMenu = () => {
   if (!menuToggle) {
     return;
   }
-  header.classList.add('page-header--is-active');
-  menuToggle.classList.add('page-header__toggle--is-active');
-  menuList.classList.add('nav--is-active');
+  header.classList.add('is-active');
+  menuToggle.classList.add('is-active');
+  menuList.classList.add('is-active');
   window.scrollLock.disableScrolling();
   menuList.addEventListener('click', onNaVLinkCloseMenu);
   menuList.addEventListener('click', onNavOutsideClick);
