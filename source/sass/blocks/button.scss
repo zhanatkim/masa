@@ -79,6 +79,7 @@
     }
 
     @include hover-focus {
+      outline: none;
       background-color: transparent;
 
       .button__mark {
@@ -91,7 +92,7 @@
       }
 
       @include active {
-        color: rgba($color-default-white, 0.7);
+        background-color: transparent;
 
         .button__mark {
           background-color: $color-default-white;

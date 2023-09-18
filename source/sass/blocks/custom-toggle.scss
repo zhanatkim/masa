@@ -89,10 +89,13 @@
       border: 1px solid rgba($color-default-white, 0.7);
     }
 
-    @include hover-focus {
-      & input + .custom-toggle__icon {
+    input {
+      @include hover-focus {
         outline: none;
-        border: 1px solid $color-default-white;
+
+        & + .custom-toggle__icon {
+          border: 1px solid $color-default-white;
+        }
       }
     }
 
@@ -104,15 +107,16 @@
         display: block;
         color: $color-default-blue;
       }
-    }
 
-    @include hover-focus {
-      input:checked + .custom-toggle__icon {
+      @include hover-focus {
         outline: none;
-        background-color: transparent;
 
-        & svg {
-          color: $color-default-white;
+        & + .custom-toggle__icon {
+          background-color: transparent;
+
+          & svg {
+            color: $color-default-white;
+          }
         }
       }
     }
