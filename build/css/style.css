@@ -2218,6 +2218,7 @@ button,
 }
 @media (hover: hover) {
   .button:hover:not(.focus-visible) {
+    outline: none;
     background-color: #316dc2;
     color: #ffffff;
   }
@@ -2240,6 +2241,7 @@ button,
   }
 }
 .button.focus-visible:focus {
+  outline: none;
   background-color: #316dc2;
   color: #ffffff;
 }
@@ -2777,6 +2779,16 @@ button,
   margin: -1px;
   clip: rect(0 0 0 0);
 }
+@media (hover: hover) {
+  .custom-toggle input:hover:not(.focus-visible) + .custom-toggle__icon {
+    outline: none;
+    border: 1px solid #316dc2;
+  }
+}
+.custom-toggle input.focus-visible:focus + .custom-toggle__icon {
+  outline: none;
+  border: 1px solid #316dc2;
+}
 .custom-toggle label {
   display: -ms-grid;
   display: grid;
@@ -2834,16 +2846,6 @@ button,
 .custom-toggle.is-invalid label .custom-toggle__icon {
   border: 1px solid #ff5e66;
   background: rgba(255, 94, 102, 0.2);
-}
-@media (hover: hover) {
-  .custom-toggle:hover:not(.focus-visible) .custom-toggle__icon {
-    outline: none;
-    border: 1px solid #316dc2;
-  }
-}
-.custom-toggle.focus-visible:focus .custom-toggle__icon {
-  outline: none;
-  border: 1px solid #316dc2;
 }
 .custom-toggle input:checked:hover .custom-toggle__icon {
   outline: none;
@@ -4735,6 +4737,7 @@ button,
 }
 @media (hover: hover) {
   .swiper-button:hover:not(.focus-visible) {
+    outline: none;
     background-color: #ffffff;
   }
   .swiper-button:hover:not(.focus-visible):active {
@@ -4742,6 +4745,7 @@ button,
   }
 }
 .swiper-button.focus-visible:focus {
+  outline: none;
   background-color: #ffffff;
 }
 .swiper-button.focus-visible:focus:active {

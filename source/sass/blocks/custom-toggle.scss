@@ -10,6 +10,13 @@
     height: 1px;
     margin: -1px;
     clip: rect(0 0 0 0);
+
+    @include hover-focus {
+      & + .custom-toggle__icon {
+        outline: none;
+        border: 1px solid $color-default-blue;
+      }
+    }
   }
 
   label {
@@ -66,13 +73,6 @@
         border: 1px solid $color-error-red;
         background: rgba($color-error-red, 0.2);
       }
-    }
-  }
-
-  @include hover-focus {
-    & .custom-toggle__icon {
-      outline: none;
-      border: 1px solid $color-default-blue;
     }
   }
 

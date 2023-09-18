@@ -62,6 +62,7 @@
     "node": ">=16.15.1"
   },
   "dependencies": {
+    "lazysizes": "^5.3.2",
     "leaflet": "^1.9.4"
   }
 }
