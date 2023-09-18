@@ -2446,7 +2446,6 @@ button,
 }
 @media (max-width: 1199px) {
   .modal__wrapper {
-    padding-top: 26.6%;
     padding-top: calc((100vh - 602px) / 2 - 7px);
     padding-left: 16.9%;
     padding-right: 16.8%;

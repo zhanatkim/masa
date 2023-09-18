@@ -13,7 +13,8 @@ export const heroSwiper = new Swiper('.page-header__swiper', {
   },
   autoplay: {
     delay: 3000,
-    disableOnInteraction: true,
+    paused: true,
+    timeLeft: 4000,
   },
 });
 heroSwiper.on('afterInit', renderSlide());
