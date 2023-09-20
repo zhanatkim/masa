@@ -77,6 +77,9 @@
   font-weight: 500;
   letter-spacing: 0.02em;
   cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 
   @include hover-focus {
     outline: none;

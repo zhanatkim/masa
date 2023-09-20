@@ -100,6 +100,8 @@
   background: $color-transparent;
   border: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 
   @include hover-focus {
     outline: none;

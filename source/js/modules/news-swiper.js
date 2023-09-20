@@ -4,24 +4,10 @@ import Swiper from '../vendor/swiper';
 
 const slidesWrapper = document.querySelector('.news__wrapper');
 const buttonsWrapper = document.querySelector('.news__tubs');
+// const swiperLinks = slidesWrapper.querySelectorAll('a[href]');
 
 const renderBullets = (index, className) =>
   '<span class="' + className + '">' + (index + 1) + '</span>';
-
-// const blockFocusSlide = () => {
-
-//   // const activeSlide = slidesWrapper.querySelector('.swiper-slide-active');
-
-//   // if (!activeSlide) {
-//   //   return;
-//   // }
-
-//   // const focusableSlides = Array.from(slidesWrapper.querySelectorAll('.swiper-slide')).filter((item) => !item.classList.contains('swiper-slide-active'));
-//   // focusableSlides.forEach((el) => el.setAttribute('inert', true));
-//   // activeSlide.removeAttribute('inert');
-// };
-
-// slidesWrapper.addEventListener('focus', blockFocusSlide, true);
 
 const newsParams = {
   spaceBetween: 20,
@@ -61,13 +47,6 @@ const newsParams = {
 };
 
 let newsSwiper = new Swiper('.news__swiper', newsParams);
-// newsSwiper.on('keydown', function (e) {
-//   if (e.keyCode === 9) {
-//     e.preventDefault();
-//   }
-// });
-// newsSwiper.on('afterInit', blockFocusSlide());
-// newsSwiper.on('slideChangeTransitionEnd', blockFocusSlide);
 
 const filterSlides = (evt) => {
   if (!evt.target.closest('.news__tub')) {
@@ -107,4 +86,30 @@ const filterSlides = (evt) => {
 };
 
 buttonsWrapper.addEventListener('click', filterSlides);
+
+const unsetInert = () => {
+  if (window.matchMedia('(min-width:1200px)').matches) {
+    newsSwiper.slides[newsSwiper.activeIndex].removeAttribute('inert');
+    newsSwiper.slides[newsSwiper.activeIndex + 1].removeAttribute('inert');
+    newsSwiper.slides[newsSwiper.activeIndex + 2].removeAttribute('inert');
+  } else if (window.matchMedia('(min-width:768px)').matches) {
+    newsSwiper.slides[newsSwiper.activeIndex].removeAttribute('inert');
+    newsSwiper.slides[newsSwiper.activeIndex + 1].removeAttribute('inert');
+    newsSwiper.slides[newsSwiper.activeIndex + 2].removeAttribute('inert');
+    newsSwiper.slides[newsSwiper.activeIndex + 3].removeAttribute('inert');
+  }
+  newsSwiper.slides[newsSwiper.activeIndex].removeAttribute('inert');
+  newsSwiper.slides[newsSwiper.activeIndex + 1].removeAttribute('inert');
+};
+
+const setFocusableSlides = () => {
+  if (slidesWrapper) {
+    for (let slide of slidesWrapper) {
+      slide.setAttribute('inert', true);
+      unsetInert();
+    }
+  }
+};
+newsSwiper.on('afterInit', setFocusableSlides());
+newsSwiper.on('activeIndexChange', setFocusableSlides);
 

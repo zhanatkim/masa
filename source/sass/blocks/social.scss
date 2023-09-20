@@ -7,6 +7,8 @@
   color: $color-default-white;
   background-color: $color-default-blue;
   border-radius: 50%;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
   // transition: background-color $trans-default;
 
   & svg {
@@ -17,11 +19,11 @@
   @include hover-focus {
     outline: none;
     color: rgba($color-default-white, 0.7);
+  }
 
-    @include active {
-      color: $color-default-white;
-      background-color: $color-active-navy;
-    }
+  @include active {
+    color: $color-default-white;
+    background-color: $color-active-navy;
   }
 
   @include vp-767 {

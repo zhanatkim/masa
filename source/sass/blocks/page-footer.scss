@@ -65,6 +65,8 @@
   width: fit-content;
   justify-self: right;
   align-self: center;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 
   @include vp-1199 {
     gap: 10px;
@@ -129,6 +131,10 @@
   }
 
   & a {
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
+
     @include hover-focus {
       outline: none;
       color: $color-default-blue;
@@ -136,6 +142,10 @@
       @include active {
         color: $color-active-navy;
       }
+    }
+
+    @include active {
+      color: $color-active-navy;
     }
   }
 }
@@ -151,6 +161,9 @@
   width: fit-content;
   text-decoration: none;
   color: $color-default-black;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 
   &::after {
     content: "";
@@ -181,6 +194,14 @@
       &::after {
         background-color: $color-active-navy;
       }
+    }
+  }
+
+  @include active {
+    color: $color-active-navy;
+
+    &::after {
+      background-color: $color-active-navy;
     }
   }
 }

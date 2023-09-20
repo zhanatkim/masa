@@ -2188,6 +2188,12 @@ button,
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 .button span {
   -ms-flex-item-align: center;
@@ -2238,10 +2244,6 @@ button,
   .button:hover:not(.focus-visible):active {
     background-color: #316dc2;
     color: rgba(255, 255, 255, 0.7);
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
   }
   .button:hover:not(.focus-visible):active .button__mark {
     background-color: #ffffff;
@@ -2265,10 +2267,6 @@ button,
 .button.focus-visible:focus:active {
   background-color: #316dc2;
   color: rgba(255, 255, 255, 0.7);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
 .button.focus-visible:focus:active .button__mark {
   background-color: #ffffff;
@@ -2352,6 +2350,13 @@ button,
   background-color: #ffffff;
   color: rgba(49, 109, 194, 0.7);
 }
+.button--no-text:active {
+  background-color: transparent;
+}
+.button--no-text:active .button__mark {
+  background-color: #ffffff;
+  color: rgba(49, 109, 194, 0.7);
+}
 .button--form {
   color: #ffffff;
   border: 1px solid #ffffff;
@@ -2401,6 +2406,14 @@ button,
   color: rgba(49, 109, 194, 0.7);
 }
 .button--form.focus-visible:focus:active .button__mark {
+  background-color: #316dc2;
+  color: rgba(255, 255, 255, 0.7);
+}
+.button--form:active {
+  background-color: #ffffff;
+  color: rgba(49, 109, 194, 0.7);
+}
+.button--form:active .button__mark {
   background-color: #316dc2;
   color: rgba(255, 255, 255, 0.7);
 }
@@ -2541,6 +2554,8 @@ button,
   background: rgba(255, 255, 255, 0);
   border: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 @media (hover: hover) {
   .modal__close-btn:hover:not(.focus-visible) {
@@ -2803,6 +2818,12 @@ button,
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 .custom-toggle input {
   position: absolute;
@@ -3394,6 +3415,12 @@ button,
   z-index: 3;
   -webkit-transition: width 0.6s ease;
   transition: width 0.6s ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 .page-header__toggle .page-header__mark {
   width: 46px;
@@ -3542,6 +3569,8 @@ button,
   border-radius: 20px 20px 0 0;
   background-color: #ffffff;
   position: static;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 .page-header-swiper__container > .page-header-swiper__pagination::after {
   content: "";
@@ -3914,6 +3943,12 @@ button,
   height: inherit;
   -webkit-transition: height 0.6s ease;
   transition: height 0.6s ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 @media (hover: hover) {
   .nav__link:hover:not(.focus-visible),
@@ -4057,6 +4092,8 @@ button,
       justify-self: right;
   -ms-grid-row-align: center;
       align-self: center;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 @media (max-width: 1199px) {
   .page-footer__socials {
@@ -4190,6 +4227,14 @@ button,
     font-size: 14px;
   }
 }
+.page-footer__list a {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
+}
 @media (hover: hover) {
   .page-footer__list a:hover:not(.focus-visible) {
     outline: none;
@@ -4206,6 +4251,9 @@ button,
 .page-footer__list a.focus-visible:focus:active {
   color: #275699;
 }
+.page-footer__list a:active {
+  color: #275699;
+}
 
 @media (max-width: 1199px) {
   .page-footer__copyright {
@@ -4220,6 +4268,12 @@ button,
   width: fit-content;
   text-decoration: none;
   color: #484848;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 .page-footer__privacy::after {
   content: "";
@@ -4264,6 +4318,12 @@ button,
 .page-footer__privacy.focus-visible:focus:active::after {
   background-color: #275699;
 }
+.page-footer__privacy:active {
+  color: #275699;
+}
+.page-footer__privacy:active::after {
+  background-color: #275699;
+}
 
 .social {
   display: -webkit-box;
@@ -4280,6 +4340,8 @@ button,
   color: #ffffff;
   background-color: #316dc2;
   border-radius: 50%;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 .social svg {
   width: 16px;
@@ -4290,16 +4352,12 @@ button,
     outline: none;
     color: rgba(255, 255, 255, 0.7);
   }
-  .social:hover:not(.focus-visible):active {
-    color: #ffffff;
-    background-color: #275699;
-  }
 }
 .social.focus-visible:focus {
   outline: none;
   color: rgba(255, 255, 255, 0.7);
 }
-.social.focus-visible:focus:active {
+.social:active {
   color: #ffffff;
   background-color: #275699;
 }
@@ -4887,6 +4945,8 @@ button,
   width: 22px;
   height: 22px;
   border-radius: 50%;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 @media (hover: hover) {
   .swiper-button:hover:not(.focus-visible) {
@@ -5230,6 +5290,12 @@ button,
   font-weight: 500;
   letter-spacing: 0.02em;
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 @media (hover: hover) {
   .news__tub:hover:not(.focus-visible) {
@@ -6464,6 +6530,12 @@ button,
 }
 .contacts__item p a {
   color: #ffffff;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 @media (hover: hover) {
   .contacts__item p a[href^="tel:"]:hover:not(.focus-visible),

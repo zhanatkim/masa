@@ -5,6 +5,8 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 
   @include hover-focus {
     outline: none;

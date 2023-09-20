@@ -14,4 +14,8 @@ export const renderSlide = () => {
 
   const activeImage = Array.from(bgImages).find((item) => item.dataset.index === activeSlide.dataset.swiperSlideIndex);
   activeImage.classList.add('page-header__photo--is-active');
+
+  const focusableSlides = Array.from(wrapper.querySelectorAll('.page-header-swiper__slide')).filter((item) => !item.classList.contains('swiper-slide-active'));
+  focusableSlides.forEach((el) => el.setAttribute('inert', true));
+  activeSlide.removeAttribute('inert');
 };

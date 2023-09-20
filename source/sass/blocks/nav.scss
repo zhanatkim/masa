@@ -121,6 +121,9 @@
   opacity: 0.7;
   height: inherit;
   transition: height $trans-600;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 
   @include hover-focus {
     outline: none;
