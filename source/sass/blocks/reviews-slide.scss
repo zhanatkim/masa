@@ -26,18 +26,18 @@
   align-self: flex-start;
 }
 
-.reviews-slide__name,
-.reviews-slide__list {
+.reviews-slide__name {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
 }
 
 .reviews-slide__top {
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 34px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   @include vp-767 {
     flex-direction: column;
     gap: 12px;
@@ -88,6 +88,8 @@
 }
 
 .reviews-slide__list {
+  display: flex;
+  align-items: center;
   margin: 0;
   padding: 0;
   list-style: none;

@@ -4925,6 +4925,9 @@ button,
     line-height: 14px;
     width: 100%;
     min-height: unset;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 
@@ -6119,7 +6122,7 @@ button,
 }
 @media (max-width: 767px) {
   .reviews__title {
-    padding: 6px 0 5px;
+    padding: 4px 0 5px;
   }
 }
 
@@ -6223,27 +6226,28 @@ button,
       align-self: flex-start;
 }
 
-.reviews-slide__name,
-.reviews-slide__list {
+.reviews-slide__name {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 .reviews-slide__top {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto auto;
-  grid-template-columns: auto auto;
-  gap: 34px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 @media (max-width: 767px) {
   .reviews-slide__top {
@@ -6304,6 +6308,12 @@ button,
 }
 
 .reviews-slide__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -6774,6 +6784,12 @@ button,
   }
 }
 
+@media (max-width: 767px) {
+  .form__custom-toggle {
+    padding-top: 0;
+  }
+}
+
 .form__button {
   margin-top: 24px;
   width: 100%;
@@ -6782,9 +6798,18 @@ button,
   width: calc(100% - 76px);
 }
 @media (max-width: 767px) {
+  .form__button span:not(.button__mark) {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+}
+@media (max-width: 767px) {
   .form__button {
     margin-top: 8px;
-    padding-left: 40px;
+    padding-left: 20px;
   }
 }
 
