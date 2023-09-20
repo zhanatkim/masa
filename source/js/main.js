@@ -9,7 +9,7 @@ import {initAccordions} from './modules/accordion/init-accordion';
 // import './modules/news-swiper';
 // import {setFilteredSlides} from './modules/news-filter';
 // ---------------------------------
-
+// const aboutLink = document.querySelector('.about__button button');
 window.addEventListener('DOMContentLoaded', () => {
 
   // Utils
@@ -24,6 +24,10 @@ window.addEventListener('DOMContentLoaded', () => {
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
     initAccordions();
+    // aboutLink.addEventListener('click', function (event) {
+    //   event.preventDefault();
+    //   initModals();
+    // });
     initModals();
     // createCardsList(newsCards);
     // setFilteredSlides();

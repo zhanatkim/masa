@@ -3,7 +3,7 @@
   margin: 0;
   align-self: flex-end;
   background-color: transparent;
-  transition: background-color $trans-modal;
+  transition: background-color $trans-default;
 
   &.is-active {
     background-color: rgba(0, 0, 0, 0.5);
@@ -17,21 +17,66 @@
     overflow: hidden;
     z-index: 2;
 
-    & .nav__list {
-      max-height: 100%;
-      padding: 33px 25px;
-      list-style: none;
-      justify-self: flex-end;
-      gap: 24px;
-      background-color: $color-default-blue;
-      border-radius: 16px;
+    .nav__inner {
+      max-height: calc(100vh - 104px);
 
-      .nav__item {
+      @include vp-767 {
+        max-height: calc(100vh - 94px);
+      }
+    }
+
+    & .nav__list {
+      margin: 33px 25px;
+      list-style: none;
+      gap: 24px;
+      overflow-y: scroll;
+      scrollbar-width: none;
+      // height: auto;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      li {
         height: 100%;
         visibility: visible;
         opacity: 1;
       }
     }
+  }
+}
+
+.nav__wrapper {
+  width: fit-content;
+  position: fixed;
+  right: calc(50% - 620px);
+  top: 88px;
+
+  @include vp-1319 {
+    right: 40px;
+  }
+
+  @include vp-1199 {
+    right: 45px;
+  }
+
+  @include vp-767 {
+    width: calc(100% - 30px);
+    top: 78px;
+    right: 15px;
+  }
+}
+
+.nav__inner {
+  max-height: 0;
+  width: 286px;
+  background-color: $color-default-blue;
+  border-radius: 16px;
+  display: flex;
+  transition: max-height $trans-600;
+
+  @include vp-767 {
+    width: 100%;
   }
 }
 
@@ -46,43 +91,23 @@
 }
 
 .nav__list {
-  width: 286px;
-  max-height: 0;
-  position: absolute;
-  right: calc(50% - 620px);
-  top: 88px;
-  overflow-y: scroll;
-  scrollbar-width: none;
-  transition: max-height $trans-600;
+  width: 100%;
+  // height: 0;
+  // transition: height $trans-600;
 
-  &::-webkit-scrollbar {
-    display: none;
+  li {
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    max-height: inherit;
+    transition: height $trans-600;
   }
 
   & > .nav__item > .nav__link {
     text-transform: uppercase;
     letter-spacing: 0.02em;
   }
-
-  @include vp-1199 {
-    right: 45px;
-  }
-
-  @include vp-767 {
-    top: 78px;
-    right: 15px;
-    width: calc(100% - 30px);
-  }
 }
-
-.nav__item {
-  height: 0;
-  visibility: hidden;
-  opacity: 0;
-  max-height: inherit;
-  transition: height $trans-600;
-}
-
 
 .nav__sublist {
   padding-left: 16px;
@@ -93,13 +118,20 @@
 .nav__link,
 .nav__submenu {
   color: $color-default-white;
+  opacity: 0.7;
   height: inherit;
   transition: height $trans-600;
+
+  @include hover-focus {
+    outline: none;
+    opacity: 1;
+  }
 }
 
 .nav__submenu {
   margin: 0;
   padding: 0;
+  height: fit-content;
   border: none;
   background-color: transparent;
   position: relative;
@@ -127,6 +159,7 @@
 .nav__item.is-active {
   & > .nav__submenu {
     font-weight: 500;
+    opacity: 1;
 
     &::after {
       opacity: 1;

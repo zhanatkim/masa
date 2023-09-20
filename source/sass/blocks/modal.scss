@@ -106,8 +106,12 @@
     opacity: 0.5;
 
     @include active {
-      opacity: 1;
+      opacity: 0.75;
     }
+  }
+
+  @include active {
+    opacity: 0.75;
   }
 
   @include vp-767 {

@@ -132,11 +132,32 @@
         height: 26px;
       }
 
+      &:not(&-active) {
+        @include hover-focus {
+          outline: none;
+          background-color: transparent;
+          border: 1px solid $color-default-blue;
+          color: $color-default-blue;
+          opacity: 1;
+
+          @include active {
+            background-color: $color-active-navy;
+            border: 1px solid $color-active-navy;
+            color: $color-default-white;
+          }
+        }
+      }
+
       &-active {
         background-color: $color-default-blue;
         border-radius: 50%;
         color: $color-default-white;
         opacity: 1;
+        cursor: default;
+
+        &:focus {
+          outline: none;
+        }
       }
     }
   }

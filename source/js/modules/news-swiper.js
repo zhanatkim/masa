@@ -8,6 +8,21 @@ const buttonsWrapper = document.querySelector('.news__tubs');
 const renderBullets = (index, className) =>
   '<span class="' + className + '">' + (index + 1) + '</span>';
 
+// const blockFocusSlide = () => {
+
+//   // const activeSlide = slidesWrapper.querySelector('.swiper-slide-active');
+
+//   // if (!activeSlide) {
+//   //   return;
+//   // }
+
+//   // const focusableSlides = Array.from(slidesWrapper.querySelectorAll('.swiper-slide')).filter((item) => !item.classList.contains('swiper-slide-active'));
+//   // focusableSlides.forEach((el) => el.setAttribute('inert', true));
+//   // activeSlide.removeAttribute('inert');
+// };
+
+// slidesWrapper.addEventListener('focus', blockFocusSlide, true);
+
 const newsParams = {
   spaceBetween: 20,
   slidesPerView: 1,
@@ -42,9 +57,17 @@ const newsParams = {
     nextEl: '.news__button--next',
     prevEl: '.news__button--prev',
   },
+  focusableElements: 'a',
 };
 
 let newsSwiper = new Swiper('.news__swiper', newsParams);
+// newsSwiper.on('keydown', function (e) {
+//   if (e.keyCode === 9) {
+//     e.preventDefault();
+//   }
+// });
+// newsSwiper.on('afterInit', blockFocusSlide());
+// newsSwiper.on('slideChangeTransitionEnd', blockFocusSlide);
 
 const filterSlides = (evt) => {
   if (!evt.target.closest('.news__tub')) {
@@ -84,3 +107,4 @@ const filterSlides = (evt) => {
 };
 
 buttonsWrapper.addEventListener('click', filterSlides);
+

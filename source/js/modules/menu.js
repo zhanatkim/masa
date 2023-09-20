@@ -1,4 +1,5 @@
 import '../utils/scroll-lock';
+import '../utils/focus-lock';
 const header = document.querySelector('.page-header');
 const menuList = header.querySelector('.nav');
 const menuToggle = header.querySelector('.page-header__toggle');
@@ -21,6 +22,7 @@ function closeMenu() {
   header.classList.remove('is-active');
   menuToggle.classList.remove('is-active');
   window.scrollLock.enableScrolling();
+  window.focusLock.unlock();
   menuList.removeEventListener('click', onNaVLinkCloseMenu);
   menuList.removeEventListener('click', onNavOutsideClick);
   menuToggle.removeEventListener('click', closeMenu);
@@ -34,6 +36,7 @@ const openMenu = () => {
   menuToggle.classList.add('is-active');
   menuList.classList.add('is-active');
   window.scrollLock.disableScrolling();
+  window.focusLock.lock('.nav', false);
   menuList.addEventListener('click', onNaVLinkCloseMenu);
   menuList.addEventListener('click', onNavOutsideClick);
   menuToggle.addEventListener('click', closeMenu);

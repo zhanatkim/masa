@@ -1,32 +1,21 @@
 .page-header-swiper {
   width: 100%;
-  margin-top: 26.4%;
-  margin-bottom: 60px;
+}
 
-  & > .page-header-swiper__pagination {
-    top: 10px;
-    left: 15px;
-    width: fit-content;
-    height: fit-content;
-
-    & > .swiper-pagination-bullet {
-      margin: 0 6px;
-    }
-
-    @include vp-767 {
-      top: 4px;
-      left: 10px;
-    }
-  }
+.page-header-swiper__slide {
+  padding-bottom: 60px;
+  width: 100%;
+  min-height: 716px;
+  display: flex;
+  align-items: flex-end;
 
   @include vp-1199 {
-    margin-top: 87.31%;
-    margin-bottom: 60px;
+    min-height: 940px;
   }
 
   @include vp-767 {
-    margin-top: 54.83%;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
+    min-height: 494px;
   }
 }
 
@@ -44,18 +33,71 @@
   @include vp-767 {
     width: 100%;
   }
+
+  & > .page-header-swiper__pagination {
+    padding: 12px 10px 14px;
+    margin-bottom: -1px;
+    max-width: 94px;
+    border-radius: 20px 20px 0 0;
+    background-color: $color-default-white;
+    position: static;
+
+    &::after {
+      @include white-angle;
+      background: radial-gradient(circle at 100% 0, transparent 18px, $color-default-white 19px);
+      width: 20px;
+      height: 20px;
+      bottom: 0;
+      right: -19px;
+
+      @include vp-767 {
+        background: radial-gradient(circle at 100% 0, transparent 8px, $color-default-white 9px);
+        bottom: 0;
+        right: -9px;
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    @include vp-767 {
+      padding: 6px;
+      width: 80px;
+      border-radius: 12px 12px 0 0;
+    }
+
+    & > .swiper-pagination-bullet {
+      margin: 0 6px;
+
+      @include hover-focus {
+        outline: none;
+        opacity: 0.75;
+      }
+
+      &-active {
+        @include hover-focus {
+          border: 1px solid $color-default-blue;
+          background-color: transparent;
+        }
+      }
+    }
+
+    @include vp-767 {
+      top: 4px;
+      left: 10px;
+    }
+  }
 }
 
 .page-header-swiper__text {
-  margin-top: -6px;
-  padding: 0 50px 25px;
+  margin-top: -1px;
+  padding: 0 50px 35px;
   background-color: $color-default-white;
   border-radius: 0 0 30px 28px;
   width: 79.75%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 30px;
+  gap: 25px;
   position: relative;
 
   &::after {
@@ -64,13 +106,9 @@
     background: radial-gradient(circle at 100% 0, transparent 24px, $color-default-white 25px);
     width: 26px;
     height: 26px;
-    top: 5px;
+    top: -1px;
     right: -25px;
     transform: rotate(90deg);
-
-    @include vp-1199 {
-      top: 2px;
-    }
 
     @include vp-767 {
       background: radial-gradient(circle at 100% 0, transparent 8px, $color-default-white 9px);
@@ -82,17 +120,24 @@
 
   & p {
     padding: 0;
-    margin: 0;
+    margin: -8px 0;
     font-size: 16px;
     line-height: 26px;
+    min-height: 56px;
+    max-width: 446px;
+    display: flex;
+    align-items: flex-end;
 
     @include vp-1199 {
+      margin: -1px 0;
       line-height: 20px;
+      max-width: 285px;
     }
 
     @include vp-767 {
       font-size: 14px;
       padding: 0 14px 10px;
+      max-width: unset;
       background-color: $color-default-white;
       border-radius: 0 0 14px 0;
     }
@@ -101,7 +146,6 @@
   @include vp-1199 {
     width: 89.68%;
     padding: 0 40px 32px;
-    margin-top: -3px;
     align-items: flex-start;
   }
 
@@ -113,37 +157,6 @@
   }
 }
 
-.page-header-swiper__mark {
-  margin-bottom: -1px;
-  width: 94px;
-  height: 38px;
-  border-radius: 20px 20px 0 0;
-  background-color: $color-default-white;
-  position: relative;
-
-  &::after {
-    @include white-angle;
-    background: radial-gradient(circle at 100% 0, transparent 18px, $color-default-white 19px);
-    width: 20px;
-    height: 20px;
-    bottom: 0;
-    right: -19px;
-
-    @include vp-767 {
-      background: radial-gradient(circle at 100% 0, transparent 8px, $color-default-white 9px);
-      bottom: 0;
-      right: -9px;
-      width: 10px;
-      height: 10px;
-    }
-  }
-
-  @include vp-767 {
-    width: 80px;
-    height: 28px;
-    border-radius: 12px 12px 0 0;
-  }
-}
 
 .page-header-swiper__title {
   margin: 0;
@@ -156,13 +169,18 @@
   }
 
   @include vp-767 {
-    padding: 20px 14px 16px;
+    padding: 20px 14px 15px;
     border-radius: 0 16px 16px 0;
   }
 }
 
 .page-header-swiper__inner {
+  @include vp-1199 {
+    margin-top: -2px;
+  }
+
   @include vp-767 {
+    margin-top: 0;
     position: relative;
     padding: 10px 15px;
     border-radius: 0 0 14px 14px;

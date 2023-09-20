@@ -20,73 +20,83 @@
           </a>
           <button class="page-header__toggle" type="button">
             <span>меню</span>
+            <span class="page-header__mark">
+              <svg width="20" height="10" stroke="currentColor">
+                <use xlink:href="img/sprite.svg#header-toggle"></use>
+              </svg>
+            </span>
           </button>
         </div>
-        <nav class="page-header__nav nav">
-          <ul class="nav__list" data-accordion="parent">
-            <li class="nav__item">
-              <a class="nav__link" href="#about">О проекте</a>
-            </li>
-            <li class="nav__item" data-accordion="element">
-              <button class="nav__submenu" type="button" data-accordion="button">Программы</button>
-              <div class="nav__content" data-accordion="content">
-                <ul class="nav__sublist">
-                  <li>
-                    <a class="nav__link" href="#">Стажировки</a>
-                  </li>
-                  <li>
-                    <a class="nav__link" href="#">Волонтёрство</a>
-                  </li>
-                  <li>
-                    <a class="nav__link" href="#">Учёба</a>
-                  </li>
-                  <li>
-                    <a class="nav__link" href="#">Религия</a>
-                  </li>
-                </ul>
-              </div>
+        <nav class="page-header__nav nav" >
+          <div class="nav__wrapper" data-fix-block>
+            <div class="nav__inner">
+              <ul class="nav__list" data-accordion="parent">
+                <li class="nav__item">
+                  <a class="nav__link" href="#about">О проекте</a>
+                </li>
+                <li class="nav__item" data-accordion="element">
+                  <button class="nav__submenu" type="button" data-accordion="button">Программы</button>
+                  <div class="nav__content" data-accordion="content">
+                    <ul class="nav__sublist">
+                      <li>
+                        <a class="nav__link" href="#">Стажировки</a>
+                      </li>
+                      <li>
+                        <a class="nav__link" href="#">Волонтёрство</a>
+                      </li>
+                      <li>
+                        <a class="nav__link" href="#">Учёба</a>
+                      </li>
+                      <li>
+                        <a class="nav__link" href="#">Религия</a>
+                      </li>
+                    </ul>
+                  </div>
 
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#conditions">как поехать</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link nav__link--dark" href="#reviews">Отзывы</a>
-            </li>
-            <li class="nav__item" data-accordion="element">
-              <button class="nav__submenu" type="button" data-accordion="button">новости</button>
-              <div class="nav__content" data-accordion="content">
-                <ul class="nav__sublist">
-                  <li>
-                    <a class="nav__link" href="#">Общее</a>
-                  </li>
-                  <li>
-                    <a class="nav__link" href="#">Волонтёрство</a>
-                  </li>
-                  <li>
-                    <a class="nav__link" href="#">Стажировки</a>
-                  </li>
-                  <li>
-                    <a class="nav__link" href="#">Карьера</a>
-                  </li>
-                  <li>
-                    <a class="nav__link" href="#">путешествия</a>
-                  </li>
-                </ul>
-              </div>
+                </li>
+                <li class="nav__item">
+                  <a class="nav__link" href="#conditions">Как поехать</a>
+                </li>
+                <li class="nav__item">
+                  <a class="nav__link nav__link--dark" href="#reviews">Отзывы</a>
+                </li>
+                <li class="nav__item" data-accordion="element">
+                  <button class="nav__submenu" type="button" data-accordion="button">Новости</button>
+                  <div class="nav__content" data-accordion="content">
+                    <ul class="nav__sublist">
+                      <li>
+                        <a class="nav__link" href="#">Общее</a>
+                      </li>
+                      <li>
+                        <a class="nav__link" href="#">Волонтёрство</a>
+                      </li>
+                      <li>
+                        <a class="nav__link" href="#">Стажировки</a>
+                      </li>
+                      <li>
+                        <a class="nav__link" href="#">Карьера</a>
+                      </li>
+                      <li>
+                        <a class="nav__link" href="#">Путешествия</a>
+                      </li>
+                    </ul>
+                  </div>
 
-            </li>
-            <li class="nav__item">
-              <a class="nav__link nav__link--dark" href="#contacts">Контакты</a>
-            </li>
-          </ul>
+                </li>
+                <li class="nav__item">
+                  <a class="nav__link nav__link--dark" href="#contacts">Контакты</a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
         </nav>
         <div class="page-header__swiper page-header-swiper swiper">
           <div class="page-header-swiper__wrapper swiper__wrapper swiper-wrapper">
 
             <div class="page-header-swiper__slide swiper__slide swiper-slide">
               <div class="page-header-swiper__container">
-                <span class="page-header-swiper__mark"></span>
+                <div class="page-header-swiper__pagination swiper__pagination swiper-pagination"></div>
                 <h2 class="page-header-swiper__title title title--large">
                   Программы стажировок в&nbsp;крупнейших компаниях Израиля
                 </h2>
@@ -108,7 +118,7 @@
 
             <div class="page-header-swiper__slide swiper__slide swiper-slide">
               <div class="page-header-swiper__container">
-                <span class="page-header-swiper__mark"></span>
+                <div class="page-header-swiper__pagination swiper__pagination swiper-pagination"></div>
                 <h2 class="page-header-swiper__title title title--large">
                   Волонтёрские программы&nbsp;&mdash; внесите свой вклад в&nbsp;общество
                 </h2>
@@ -130,7 +140,7 @@
 
             <div class="page-header-swiper__slide swiper__slide swiper-slide">
               <div class="page-header-swiper__container">
-                <span class="page-header-swiper__mark"></span>
+                <div class="page-header-swiper__pagination swiper__pagination swiper-pagination"></div>
                 <h2 class="page-header-swiper__title title title--large">
                   Глобальный профессиональный опыт обучения за&nbsp;рубежом
                 </h2>
@@ -151,7 +161,6 @@
             </div>
 
           </div>
-          <div class="page-header-swiper__pagination swiper__pagination swiper-pagination"></div>
         </div>
         <div class="page-header__photo" data-index="0">
           <picture>

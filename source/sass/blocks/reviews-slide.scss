@@ -1,8 +1,8 @@
 .reviews-slide {
   padding: 50px 50px 43px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   // min-width: 50%;
   height: auto;
   border-radius: 16px;
@@ -22,6 +22,10 @@
 }
 
 .reviews-slide__top,
+.reviews-slide__bottom {
+  align-self: flex-start;
+}
+
 .reviews-slide__name,
 .reviews-slide__list {
   display: flex;
@@ -31,6 +35,9 @@
 }
 
 .reviews-slide__top {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 34px;
   @include vp-767 {
     flex-direction: column;
     gap: 12px;
@@ -84,7 +91,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  gap: 25px;
+  gap: 26px;
 
   & li {
     display: grid;
