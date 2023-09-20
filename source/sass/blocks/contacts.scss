@@ -166,6 +166,7 @@
   width: 100%;
   height: 500px;
   border-radius: 16px;
+  overflow: hidden;
 
   @include vp-767 {
     height: 240px;

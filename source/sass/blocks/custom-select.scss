@@ -78,11 +78,6 @@
 
     @include focus {
       border: 1px solid $color-default-black;
-
-      & + .custom-select__list {
-        visibility: visible;
-        opacity: 1;
-      }
     }
 
     &:disabled {
@@ -120,7 +115,8 @@
     outline: none;
     cursor: pointer;
 
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease,
+      color 0.3s ease;
 
     &[aria-selected="true"] {
       background-color: $color-default-blue;
@@ -139,6 +135,11 @@
         background-color: $color-default-blue;
         color: $color-default-white;
       }
+    }
+
+    @include focus {
+      background-color: $color-default-blue;
+      color: $color-default-white;
     }
   }
 
@@ -325,10 +326,10 @@
     @include focus {
       border: 1px solid $color-default-white;
 
-      & + .custom-select__list {
-        visibility: visible;
-        opacity: 1;
-      }
+      // & + .custom-select__list {
+      //   visibility: visible;
+      //   opacity: 1;
+      // }
     }
   }
 

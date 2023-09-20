@@ -2896,14 +2896,29 @@ button,
   display: block;
   color: #ffffff;
 }
+@media (hover: hover) {
+  .custom-toggle--checkbox input:checked:hover:not(.focus-visible) {
+    outline: none;
+  }
+  .custom-toggle--checkbox input:checked:hover:not(.focus-visible) + .custom-toggle__icon {
+    background-color: transparent;
+  }
+  .custom-toggle--checkbox input:checked:hover:not(.focus-visible) + .custom-toggle__icon svg {
+    color: #316dc2;
+  }
+}
+.custom-toggle--checkbox input:checked.focus-visible:focus {
+  outline: none;
+}
+.custom-toggle--checkbox input:checked.focus-visible:focus + .custom-toggle__icon {
+  background-color: transparent;
+}
+.custom-toggle--checkbox input:checked.focus-visible:focus + .custom-toggle__icon svg {
+  color: #316dc2;
+}
 .custom-toggle.is-invalid label .custom-toggle__icon {
   border: 1px solid #ff5e66;
   background: rgba(255, 94, 102, 0.2);
-}
-.custom-toggle input:checked:hover .custom-toggle__icon {
-  outline: none;
-  color: #316dc2;
-  background-color: transparent;
 }
 .custom-toggle--dark .custom-toggle__icon {
   border: 1px solid rgba(255, 255, 255, 0.7);
@@ -2931,23 +2946,23 @@ button,
   color: #316dc2;
 }
 @media (hover: hover) {
-  .custom-toggle--dark input:checked + .custom-toggle__icon:hover:not(.focus-visible) {
+  .custom-toggle--dark input:checked:hover:not(.focus-visible) {
     outline: none;
   }
-  .custom-toggle--dark input:checked + .custom-toggle__icon:hover:not(.focus-visible) + .custom-toggle__icon {
+  .custom-toggle--dark input:checked:hover:not(.focus-visible) + .custom-toggle__icon {
     background-color: transparent;
   }
-  .custom-toggle--dark input:checked + .custom-toggle__icon:hover:not(.focus-visible) + .custom-toggle__icon svg {
+  .custom-toggle--dark input:checked:hover:not(.focus-visible) + .custom-toggle__icon svg {
     color: #ffffff;
   }
 }
-.custom-toggle--dark input:checked + .custom-toggle__icon.focus-visible:focus {
+.custom-toggle--dark input:checked.focus-visible:focus {
   outline: none;
 }
-.custom-toggle--dark input:checked + .custom-toggle__icon.focus-visible:focus + .custom-toggle__icon {
+.custom-toggle--dark input:checked.focus-visible:focus + .custom-toggle__icon {
   background-color: transparent;
 }
-.custom-toggle--dark input:checked + .custom-toggle__icon.focus-visible:focus + .custom-toggle__icon svg {
+.custom-toggle--dark input:checked.focus-visible:focus + .custom-toggle__icon svg {
   color: #ffffff;
 }
 .custom-toggle:disabled {
@@ -3050,10 +3065,6 @@ button,
 .custom-select__button.focus-visible:focus {
   border: 1px solid #484848;
 }
-.custom-select__button.focus-visible:focus + .custom-select__list {
-  visibility: visible;
-  opacity: 1;
-}
 .custom-select__button:disabled {
   pointer-events: none;
   opacity: 0.3;
@@ -3087,8 +3098,8 @@ button,
   padding: 17px 20px;
   outline: none;
   cursor: pointer;
-  -webkit-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease;
+  -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .custom-select__item[aria-selected=true] {
   background-color: #316dc2;
@@ -3106,6 +3117,10 @@ button,
     background-color: #316dc2;
     color: #ffffff;
   }
+}
+.custom-select__item.focus-visible:focus {
+  background-color: #316dc2;
+  color: #ffffff;
 }
 .custom-select__error {
   position: absolute;
@@ -3261,10 +3276,6 @@ button,
 }
 .custom-select--dark .custom-select__button.focus-visible:focus {
   border: 1px solid #ffffff;
-}
-.custom-select--dark .custom-select__button.focus-visible:focus + .custom-select__list {
-  visibility: visible;
-  opacity: 1;
 }
 .custom-select--dark .custom-select__icon {
   background-color: #ffffff;
@@ -3956,6 +3967,11 @@ button,
     outline: none;
     opacity: 1;
   }
+}
+.nav__link.focus-visible:focus,
+.nav__submenu.focus-visible:focus {
+  outline: none;
+  opacity: 1;
 }
 .nav__link.focus-visible:focus,
 .nav__submenu.focus-visible:focus {
@@ -6607,6 +6623,7 @@ button,
   width: 100%;
   height: 500px;
   border-radius: 16px;
+  overflow: hidden;
 }
 @media (max-width: 767px) {
   .contacts__map {

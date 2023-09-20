@@ -129,6 +129,11 @@
     outline: none;
     opacity: 1;
   }
+
+  @include focus {
+    outline: none;
+    opacity: 1;
+  }
 }
 
 .nav__submenu {

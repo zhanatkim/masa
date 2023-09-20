@@ -4,7 +4,6 @@ import Swiper from '../vendor/swiper';
 
 const slidesWrapper = document.querySelector('.news__wrapper');
 const buttonsWrapper = document.querySelector('.news__tubs');
-// const swiperLinks = slidesWrapper.querySelectorAll('a[href]');
 
 const renderBullets = (index, className) =>
   '<span class="' + className + '">' + (index + 1) + '</span>';
@@ -87,7 +86,7 @@ const filterSlides = (evt) => {
 
 buttonsWrapper.addEventListener('click', filterSlides);
 
-const unsetInert = () => {
+function unsetInert() {
   if (window.matchMedia('(min-width:1200px)').matches) {
     newsSwiper.slides[newsSwiper.activeIndex].removeAttribute('inert');
     newsSwiper.slides[newsSwiper.activeIndex + 1].removeAttribute('inert');
@@ -100,11 +99,11 @@ const unsetInert = () => {
   }
   newsSwiper.slides[newsSwiper.activeIndex].removeAttribute('inert');
   newsSwiper.slides[newsSwiper.activeIndex + 1].removeAttribute('inert');
-};
+}
 
 const setFocusableSlides = () => {
   if (slidesWrapper) {
-    for (let slide of slidesWrapper) {
+    for (let slide of slidesWrapper.children) {
       slide.setAttribute('inert', true);
       unsetInert();
     }

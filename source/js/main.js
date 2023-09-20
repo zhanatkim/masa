@@ -4,12 +4,16 @@ import {CustomSelect} from './modules/select/custom-select';
 import {Form} from './modules/form-validate/form';
 import './modules/menu';
 import {initAccordions} from './modules/accordion/init-accordion';
-// import {newsCards} from './mocks';
-// import {createCardsList} from './modules/render-news-cards';
-// import './modules/news-swiper';
-// import {setFilteredSlides} from './modules/news-filter';
+
+
+const link = document.querySelector('.about__button');
+const nameInput = document.querySelector('#modal-name');
+const setFocus = () => {
+  setTimeout(() => {
+    nameInput.focus();
+  }, 200);
+};
 // ---------------------------------
-// const aboutLink = document.querySelector('.about__button button');
 window.addEventListener('DOMContentLoaded', () => {
 
   // Utils
@@ -24,18 +28,13 @@ window.addEventListener('DOMContentLoaded', () => {
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
     initAccordions();
-    // aboutLink.addEventListener('click', function (event) {
-    //   event.preventDefault();
-    //   initModals();
-    // });
     initModals();
-    // createCardsList(newsCards);
-    // setFilteredSlides();
     const select = new CustomSelect();
     select.init();
     const form = new Form();
     window.form = form;
     form.init();
+    link.addEventListener('click', setFocus);
   });
 });
 
