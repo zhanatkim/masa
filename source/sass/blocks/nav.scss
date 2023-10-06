@@ -113,6 +113,11 @@
   padding-left: 16px;
   padding-top: 15px;
   gap: 12px;
+
+  & .nav__link {
+    visibility: hidden;
+  }
+
 }
 
 .nav__link,
@@ -173,5 +178,9 @@
       opacity: 1;
       transform: rotate(180deg);
     }
+  }
+
+  & .nav__link {
+    visibility: visible;
   }
 }

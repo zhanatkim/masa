@@ -3946,6 +3946,9 @@ button,
   padding-top: 15px;
   gap: 12px;
 }
+.nav__sublist .nav__link {
+  visibility: hidden;
+}
 
 .nav__link,
 .nav__submenu {
@@ -4020,6 +4023,9 @@ button,
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+.nav__item.is-active .nav__link {
+  visibility: visible;
 }
 
 .page-footer {
